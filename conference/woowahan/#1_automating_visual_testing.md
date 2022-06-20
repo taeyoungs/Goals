@@ -1,3 +1,7 @@
+### 원본 영상
+
+https://www.youtube.com/watch?v=9AUEfGZslmw
+
 ## 목차
 
 1. [소프트웨어 테스트란?](#1-소프트웨어-테스트란)

@@ -17,9 +17,9 @@ https://www.youtube.com/watch?v=DHPeeEvDbdo
 - 선택은 CRA로 했지만 장기적인 관점에서 빌드 설정을 직접 바닥부터 만드는 것이 여러모로 이득
 - 완전한 SPA가 아니고 장고를 같이 사용해야 했기 때문에 CRA의 모든 설정이 베스트는 아니었음
 - 장고와의 혼용이었기에 빌드된 결과물을 장고 템플릿에 쉽게 삽입하기 위해 추가적인 라이브러리 사용
-  - react-app-rewired: CRA를 eject하지 않고도 각종 설정을 수정
-  - webpack-bundle-tracker: 번들의 경로와 pubilc path 추출
-  - django-webpack-loader: 번들을 Jinja 템플릿에 쉽게 삽입하기 위해 사용
+  - **react-app-rewired**: CRA를 eject하지 않고도 각종 설정을 수정
+  - **webpack-bundle-tracker**: 번들의 경로와 pubilc path 추출
+  - **django-webpack-loader**: 번들을 Jinja 템플릿에 쉽게 삽입하기 위해 사용
 
 ### 의존성 지옥
 
@@ -44,8 +44,8 @@ https://www.youtube.com/watch?v=DHPeeEvDbdo
 
 ### 2. 어떻게 구현했나요?
 
-- 최초 구현: Yarn Workspace + Lerna
-- 현재 구현: Yarn 2 Workspace Plugin
+- 최초 구현: **Yarn Workspace** + **Lerna**
+- 현재 구현: **Yarn 2 Workspace Plugin**
 
 ### 3. 이렇게 하면 뭐가 좋나요?
 
