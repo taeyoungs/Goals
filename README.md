@@ -15,4 +15,5 @@
 | TypeScript      |           |
 | JavaScript      |           |
 | Medium Scrap    |           |
+| Conference      | 2/2       |
 | 도서            | 2/10      |
