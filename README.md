@@ -14,6 +14,6 @@
 | ESBuild         |           |
 | TypeScript      |           |
 | JavaScript      |           |
-| Medium Scrap    |           |
+| Medium Scrap    | 1/1       |
 | Conference      | 2/2       |
 | 도서            | 2/10      |
