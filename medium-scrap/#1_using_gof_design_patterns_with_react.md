@@ -191,15 +191,12 @@ export const InternetAvailabilityObserver = () => {
     // subscribe to two events -> online and offline
 
     // when online -> set online to true
-
     // when offline -> set online to false
-
     window.addEventListener("online", () => setOnline(true));
     window.addEventListener("offline", () => setOnline(false));
 
     return () => {
       // when component gets unmounted, remove the event listeners to prevent memory leaks
-
       window.removeEventListener("online", () => setOnline(true));
       window.removeEventListener("offline", () => setOnline(false));
     };
@@ -364,34 +361,34 @@ export const useFacadeUserAPI = () => {
 
 ```typescript
 export const Facade: FC = () = {
-	const userFacade = userFacadeUserAPI();
-	const { createUser, deleteUser, getUsers, users } = userFacade;
+  const userFacade = userFacadeUserAPI();
+  const { createUser, deleteUser, getUsers, users } = userFacade;
 
-	const fetchUsers = useCallback(async () => {
-		// replace with facade API method to simplify code
-		await getUsers();
-	}, [getUsers]);
+  const fetchUsers = useCallback(async () => {
+	// replace with facade API method to simplify code
+	await getUsers();
+  }, [getUsers]);
 
-	useEffect(() => {
-		fetchUsers();
-	}, [fetchUsers]);
+  useEffect(() => {
+	fetchUsers();
+  }, [fetchUsers]);
 
-	const handleUserDelete = async (id: string) => {
-		// replace with a facade method to hide complex code required in deleting
-		await deleteUser(id);
-	};
+  const handleUserDelete = async (id: string) => {
+	// replace with a facade method to hide complex code required in deleting
+	await deleteUser(id);
+  };
 
-	const handleCreateUser = async (user: any) => {
-		// replace with a facade method to hide complex code required in creating
-		await createUser(user);
-	};
+  const handleCreateUser = async (user: any) => {
+	// replace with a facade method to hide complex code required in creating
+	await createUser(user);
+  };
 
-	return (
-		<>
-			<UserTable users={users} onDelete={handleUserDelete} />
-			<UserCreateModal onCreate={handleCreateUser} />
-		</>
-	)
+  return (
+    <>
+	  <UserTable users={users} onDelete={handleUserDelete} />
+	  <UserCreateModal onCreate={handleCreateUser} />
+	</>
+  )
 }
 ```
 
