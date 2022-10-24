@@ -1,3 +1,26 @@
+# #1 Practical React Query
+
+**Series**
+
+- #1 Practical React Query
+
+**목차**
+
+- [#1 Practical React Query](#1-practical-react-query)
+    - [원본 글](#원본-글)
+  - [Client State vs Server State](#client-state-vs-server-state)
+  - [React Query](#react-query)
+  - [The Defaults explained](#the-defaults-explained)
+    - [StaleTime](#staletime)
+    - [CacheTime](#cachetime)
+  - [Use the React Query DevTools](#use-the-react-query-devtools)
+  - [Treat the query key like a dependency array](#treat-the-query-key-like-a-dependency-array)
+    - [A new cache entry](#a-new-cache-entry)
+  - [Keep server and client state separate](#keep-server-and-client-state-separate)
+  - [The enabled option is very powerful](#the-enabled-option-is-very-powerful)
+  - [Don’t use the queryCache as a local state manager](#dont-use-the-querycache-as-a-local-state-manager)
+  - [Create custom hooks](#create-custom-hooks)
+
 ### 원본 글
 
 https://tkdodo.eu/blog/practical-react-query
@@ -18,17 +41,17 @@ Apollo는 서버의 데이터를 패칭하고 이를 캐싱한다. 이 말은 �
 
 ## React Query
 
-REST API가 그렇듯 GraphQL도 장단점이 있으며 REST API를 이미 설계단부터 잘 만들어서 관리하고 있었다면 over-fetching과 같은 문제를 거의 겪을 일이 없다. 따라서 REST API를 벗어나고자 GraphQL을 사용하겠다! 라는 식의 전환은 일반적으로 흔하지 않다.
+`REST API`가 그렇듯 `GraphQL`도 장단점이 있으며 `REST API`를 이미 설계단부터 잘 만들어서 관리하고 있었다면 over-fetching과 같은 문제를 거의 겪을 일이 없다. 따라서 `REST API`를 벗어나고자 `GraphQL`을 사용하겠다! 라는 식의 전환은 일반적으로 흔하지 않다.
 
-하지만 데이터 패칭 관리는 다르다. 프론트엔드에서 기존의 데이터 패칭 로직을 작성하는 것은 상당히 시간 소요와 귀찮음을 만드는 일 중 하나였다. 로직이 일관되지 않을 수도 있으며 로딩이나 에러 핸들링이 이쁘게 되지 않을 수도 있기 때문이다. React Query는 GraphQL의 일관적이고 간단한 데이터 패칭 관리와 로딩, 에러 핸들링을 보고 이를 REST API와 함께 써먹고 싶어서 만들어지기 시작했다.
+하지만 데이터 패칭 관리는 다르다. 프론트엔드에서 기존의 데이터 패칭 로직을 작성하는 것은 상당히 시간 소요와 귀찮음을 만드는 일 중 하나였다. 로직이 일관되지 않을 수도 있으며 로딩이나 에러 핸들링이 이쁘게 되지 않을 수도 있기 때문이다. `React Query`는 `GraphQL`의 일관적이고 간단한 데이터 패칭 관리와 로딩, 에러 핸들링을 보고 이를 `REST API`와 함께 써먹고 싶어서 만들어지기 시작했다.
 
 ## The Defaults explained
 
-첫 번째로 React Query는 **queryFn을 매 리렌더링마다 호출하지 않는다. staleTime이 0일지라도**
+첫 번째로 `React Query`는 **queryFn을 매 리렌더링마다 호출하지 않는다. staleTime이 0일지라도**
 
 애플리케이션은 다양한 이유로 리렌더링이 발생하기 때문에 매 리렌더링마다 데이터 패칭을 시도하는 것은 좋은 생각이 절 대 아니다.
 
-만약 예상하지 못한 곳에서 `refetch`를 목격했다면 이는 React Query가 `refetchOnWindowFouch`를 수행하고 있는 상황에서 window가 focus된 상황일지도 모른다. 이 기능은 프로덕션 상에서 아주 좋은 기능 중 하나로 유저가 다른 브라우저 탭으로 이동했다가 애플리케이션으로 돌아온 경우 백그라운드에서 자동으로 `refetch`가 수행된다. 유저가 다른 탭을 갔다가 돌아온 시간 사이에 서버의 데이터의 변화가 생겼다면 업데이트된 데이터로 스크린을 업데이트 시킨다. 이러한 일련의 과정들은 로딩 스피너 없이 이루어 지며, refetch로 가져온 데이터가 캐시에 존재하는 데이터와 동일할 경우 리렌더링은 발생하지 않는다.
+만약 예상하지 못한 곳에서 `refetch`를 목격했다면 이는 React Query가 `refetchOnWindowFouch`를 수행하고 있는 상황에서 `window`가 `focus`된 상황일지도 모른다. 이 기능은 프로덕션 상에서 아주 좋은 기능 중 하나로 유저가 다른 브라우저 탭으로 이동했다가 애플리케이션으로 돌아온 경우 백그라운드에서 자동으로 `refetch`가 수행된다. 유저가 다른 탭을 갔다가 돌아온 시간 사이에 서버의 데이터의 변화가 생겼다면 업데이트된 데이터로 스크린을 업데이트 시킨다. 이러한 일련의 과정들은 로딩 스피너 없이 이루어 지며, `refetch`로 가져온 데이터가 캐시에 존재하는 데이터와 동일할 경우 리렌더링은 발생하지 않는다.
 
 애플리케이션을 개발할 때는 위에서 언급한 일련의 과정이 더욱 더 빈번하게 발생하고 개발자 도구와 애플리케이션을 왔다 갔다 하는 사이에도 발생하므로 이 점을 염두해두자.
 
@@ -36,7 +59,7 @@ REST API가 그렇듯 GraphQL도 장단점이 있으며 REST API를 이미 설�
 
 ### StaleTime
 
-StaleTime은 Query의 상태가 최신 상태에서 stale 상태로 전환될 때까지의 시간을 말한다. Query의 상태가 최신인 이상 데이터는 항상 캐시에서 먼저 읽어온다. 즉, 네트워크 요청이 발생하지 않는다. 다만, 특정 상황에서는 백그라운드 refetch가 발생할 수 있다. (ex. 새 쿼리 인스턴스가 생성된 경우)
+`StaleTime`은 `Query`의 상태가 최신 상태에서 `stale` 상태로 전환될 때까지의 시간을 말한다. `Query`의 상태가 최신인 이상 데이터는 항상 캐시에서 먼저 읽어온다. 즉, 네트워크 요청이 발생하지 않는다. 다만, 특정 상황에서는 백그라운드 `refetch`가 발생할 수 있다. (ex. 새 쿼리 인스턴스가 생성된 경우)
 
 ### CacheTime
 
@@ -46,16 +69,16 @@ StaleTime은 Query의 상태가 최신 상태에서 stale 상태로 전환될 �
 
 ## Use the React Query DevTools
 
-Reat Query DevTools는 캐시에 어떤 데이터가 저장되어 있는 지와 같은 정보를 손 쉽게 디버깅할 수 있게 해준다. 추가적으로 네트워크 스로틀링을 발생시킬 수 있으며 이는 백그라운드 refetch를 인지하는데 도움을 준다.
+**Reat Query DevTools**는 캐시에 어떤 데이터가 저장되어 있는 지와 같은 정보를 손 쉽게 디버깅할 수 있게 해준다. 추가적으로 네트워크 스로틀링을 발생시킬 수 있으며 이는 백그라운드 `refetch`를 인지하는데 도움을 준다.
 
 ## Treat the query key like a dependency array
 
-`queryKey`와 useEffect의 의존성 배열은 왜 비슷할까?
+`queryKey`와 `useEffect`의 의존성 배열은 왜 비슷할까?
 
-왜냐하면 React Query는 queryKey가 변경될 때마다 refetch를 발생시키기 때문이다. 그래서 우리가 queryFn에 변수를 전달할 때는 거의 값이 변경되어 데이터를 패칭하고 싶을 때이다. `refetch`를 일일히 직접 발생시키는 대신 queryKey를 조작하는 방법도 있다.
+왜냐하면 React Query는 `queryKey`가 변경될 때마다 `refetch`를 발생시키기 때문이다. 그래서 우리가 `queryFn`에 변수를 전달할 때는 거의 값이 변경되어 데이터를 패칭하고 싶을 때이다. `refetch`를 일일히 직접 발생시키는 대신 `queryKey`를 조작하는 방법도 있다.
 
 ```typescript
-type State = "all" | "open" | "done";
+type State = 'all' | 'open' | 'done';
 type Todo = {
   id: number;
   state: State;
@@ -67,8 +90,7 @@ const fetchTodos = async (state: State): Promise<Todos> => {
   return response.data;
 };
 
-export const useTodosQuery = (state: State) =>
-  useQuery(["todos", state], () => fetchTodos(state));
+export const useTodosQuery = (state: State) => useQuery(['todos', state], () => fetchTodos(state));
 ```
 
 자, 필터링 옵션을 가진 Todo 리스트가 있다고 상상해보자. 필터링 옵션은 로컬 상태로 관리하고 있으며 유저가 필터링 옵션을 변경할 경우 로컬 상태가 업데이트 되면서 queryKey가 변경되기 때문에 자동으로 refetch가 발생한다. 유저의 필터링 옵션을 계속해서 동기화하고 있는 위 상황은 useEffect의 의존성 배열과 유사하다.
@@ -80,7 +102,7 @@ queryKey는 cache의 key 값으로 사용되기 때문에 위 예제에서 State
 위 방법은 이상적인 방법은 아니다. 사용자 경험을 조금 더 상승시키고 싶다면 `keepPreviousData` 옵션을 사용하거나 `initalData`를 통해 생성될 캐시 데이터를 미리 생성할 수도 있다. 아래의 예제는 initialData를 이용하여 위 예제에서 Todo 리스트에 대한 클라이언트 사이드 pre-filtering을 구현한 것이다.
 
 ```typescript
-type State = "all" | "open" | "done";
+type State = 'all' | 'open' | 'done';
 type Todo = {
   id: number;
   state: State;
@@ -93,11 +115,10 @@ const fetchTodos = async (state: State): Promise<Todos> => {
 };
 
 export const useTodosQuery = (state: State) =>
-  useQuery(["todos", state], () => fetchTodos(state), {
+  useQuery(['todos', state], () => fetchTodos(state), {
     initialData: () => {
-      const allTodos = queryCache.getQuery<Todos>(["todos", "all"]);
-      const filteredData =
-        allTodos?.filter((todo) => todo.state === state) ?? [];
+      const allTodos = queryCache.getQuery<Todos>(['todos', 'all']);
+      const filteredData = allTodos?.filter((todo) => todo.state === state) ?? [];
 
       return filteredData.length > 0 ? filteredData : undefined;
     },
@@ -158,15 +179,15 @@ queryCache는 오직 낙관적인 업데이트 또는 mutation 이후에 백엔�
 왜냐하면
 
 - You can keep the actual data fetching out of the ui, but co-located with your *useQuery* call.
-  - 동일한 queryFn을 호출하는 useQuery를 커스텀 훅으로 사용하면 서로 다른 UI 화면에서 동일한 useQuery 로직을 손쉽게 사용할 수 있다. 정도로 이해하고 넘어가자.
-- 하나의 queryKey에 대한(잠재적인 타입 정의, 타입스크립트를 사용할 경우) 관리를 하나의 파일 내에서 할 수 있게 된다.
+  - 동일한 `queryFn`을 호출하는 `useQuery`를 커스텀 훅으로 사용하면 서로 다른 UI 화면에서 동일한 `useQuery` 로직을 손쉽게 사용할 수 있다. 정도로 이해하고 넘어가자.
+- 하나의 `queryKey`에 대한(잠재적인 타입 정의, 타입스크립트를 사용할 경우) 관리를 하나의 파일 내에서 할 수 있게 된다.
 - 일부 설정이 변경되거나 데이터 변환을 추가해야 하는 경우에도 여전히 한 파일 내에서 수행할 수 있게 된다.
 
 ```typescript
 const useRandomValue = () => {
   const [draft, setDraft] = React.useState(undefined);
   const { data, ...queryInfo } = useQuery(
-    "random",
+    'random',
     async () => {
       await sleep(1000);
       return Promise.resolve(String(Math.random()));

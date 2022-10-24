@@ -1,19 +1,15 @@
-## 잡동사니
+# Goals 🔥
 
-### 목록
+## 카테고리
 
-| 카테고리        | 진행 상황 |
-| --------------- | --------- |
-| React           |           |
-| React 18        |           |
-| React Hook Form | 3/14      |
-| Jotai           |           |
-| Zustand         |           |
-| axios           |           |
-| Next            |           |
-| ESBuild         |           |
-| TypeScript      |           |
-| JavaScript      |           |
-| Medium Scrap    | 1/1       |
-| Conference      | 2/2       |
-| 도서            | 2/10      |
+- JavaScript
+- TypeScript
+- Browser
+- Design Pattern
+- React Query
+- Next.js
+- Remix
+- Global State Manangement
+- 컨퍼런스
+- 도서 목록
+- Others
