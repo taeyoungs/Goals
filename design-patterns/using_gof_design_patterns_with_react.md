@@ -1,20 +1,22 @@
-### 원본 글
+# Using Gof Design Patterns with React
 
-https://medium.com/bitsrc/using-gof-design-patterns-with-react-c334f3ea3147
+> 원본 글  
+> https://medium.com/bitsrc/using-gof-design-patterns-with-react-c334f3ea3147
 
----
+**목차**
+
+- [개요](#개요)
+- [Design Pattern 1: Singleton](#design-pattern-1-singleton)
+- [Design Pattern 2: Observer](#design-pattern-2-observer)
+- [Design Pattern 3: Facade](#design-pattern-3-facade)
+
+### 개요
 
 디자인 패턴은 소프트웨어 새발에서 주된 이슈에 대해 재사용 가능하고 입증된 해결책을 제공한다. 디자인 패턴을 사용하는 것은 개발에 있어서 수없이 많은 시간을 아낄 수 있게 하며 프로덕션 기능을 더 빠르게 만들 수 있게 도움을 준다.
 
 개발자로서 디자인 패턴들을 이해하는 것은 필수적이며 해당 패턴들을 어떻게 사용하냐에 따라 개발 생산성이 달라질 수 있다.
 
 따라서, 이 문서는 Gof 디자인 패턴과 이를 React로 어떻게 구현하는 지에 대해 이야기한다.
-
-### 목차
-
-1. [Design Pattern 1: Singleton](#design-pattern-1-singleton)
-2. [Design Pattern 2: Observer](#design-pattern-2-observer)
-3. [Design Pattern 3: Facade](#design-pattern-3-facade)
 
 ## Desgin Patterns: Gang-of-Four
 
@@ -90,9 +92,9 @@ export default userActions;
 이 모듈은 사용자 정보를 전역으로 관리하기 위한 싱글톤 접근법을 제공한다. 컴포넌트 내에서 이 모듈을 사용하기 위해서는 `actions`를 import하고 메서드들을 아래와 같이 호출하면 된다.
 
 ```typescript
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 // obtain the single instance - directly user var is not accessible (private)
-import userRetriever from "../../store/custom-singleton";
+import userRetriever from '../../store/custom-singleton';
 
 export const ComponentA = () => {
   const [userInformation, setUserInformation] = useState<any>(undefined);
@@ -125,19 +127,19 @@ export const ComponentA = () => {
 위 예제는 싱글 인스턴스를 가져오고 있는 컴포넌트를 보여준다.
 
 ```typescript
-import { useEffect } from "react";
-import { ComponentA } from "./component-a";
+import { useEffect } from 'react';
+import { ComponentA } from './component-a';
 // retrieve the single instance - directly user var is not accessible (private)
-import userInformation from "../../store/custom-singleton";
+import userInformation from '../../store/custom-singleton';
 
 export const Singleton = () => {
   useEffect(() => {
     // initalize the single instance variable
     userInformation.initializeUser({
-      name: "John Doe",
-      id: "123",
-      email: "johndoe@gmail.com",
-      token: "123456789",
+      name: 'John Doe',
+      id: '123',
+      email: 'johndoe@gmail.com',
+      token: '123456789',
     });
   }, []);
 
@@ -182,7 +184,7 @@ Observer 패턴을 구현할 때
 다음 예제를 함께 살펴보자.
 
 ```typescript
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export const InternetAvailabilityObserver = () => {
   const [isOnline, setOnline] = useState<any>(navigator.onLine);
@@ -192,13 +194,13 @@ export const InternetAvailabilityObserver = () => {
 
     // when online -> set online to true
     // when offline -> set online to false
-    window.addEventListener("online", () => setOnline(true));
-    window.addEventListener("offline", () => setOnline(false));
+    window.addEventListener('online', () => setOnline(true));
+    window.addEventListener('offline', () => setOnline(false));
 
     return () => {
       // when component gets unmounted, remove the event listeners to prevent memory leaks
-      window.removeEventListener("online", () => setOnline(true));
-      window.removeEventListener("offline", () => setOnline(false));
+      window.removeEventListener('online', () => setOnline(true));
+      window.removeEventListener('offline', () => setOnline(false));
     };
   });
 
@@ -291,8 +293,8 @@ React에서, 개발자들은 커스텀 훅을 통해 복잡한 코드를 그룹�
 변경한 코드는 다음과 같다.
 
 ```typescript
-import axios from "axios";
-import { useState } from "react";
+import axios from 'axios';
+import { useState } from 'react';
 
 export const useFacadeUserAPI = () => {
   const [users, setUsers] = useState<any>([]);
@@ -303,7 +305,7 @@ export const useFacadeUserAPI = () => {
     setActionExecuting(true);
 
     try {
-      const resp = await axios.get("/api/users");
+      const resp = await axios.get('/api/users');
       setUsers(resp.data);
     } catch (err) {
       console.log(err);
@@ -317,7 +319,7 @@ export const useFacadeUserAPI = () => {
     setActionExecuting(true);
 
     try {
-      await axios.post("/api/users", user);
+      await axios.post('/api/users', user);
       setUsers([...users, user]);
     } catch {
       console.log(err);
