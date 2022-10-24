@@ -61,7 +61,7 @@ npx create-react-app react-design-patterns --template typescript
 1. 객체는 반드시 싱글톤 인스턴스여야 한다.
 2. 단일 지점에서만 접근 가능해야만 한다.
 
-```typescript
+```tsx
 // use type
 interface SingletonConfigValues {
   name?: string;
@@ -91,7 +91,7 @@ export default userActions;
 
 이 모듈은 사용자 정보를 전역으로 관리하기 위한 싱글톤 접근법을 제공한다. 컴포넌트 내에서 이 모듈을 사용하기 위해서는 `actions`를 import하고 메서드들을 아래와 같이 호출하면 된다.
 
-```typescript
+```tsx
 import { useEffect, useState } from 'react';
 // obtain the single instance - directly user var is not accessible (private)
 import userRetriever from '../../store/custom-singleton';
@@ -126,7 +126,7 @@ export const ComponentA = () => {
 
 위 예제는 싱글 인스턴스를 가져오고 있는 컴포넌트를 보여준다.
 
-```typescript
+```tsx
 import { useEffect } from 'react';
 import { ComponentA } from './component-a';
 // retrieve the single instance - directly user var is not accessible (private)
@@ -168,7 +168,7 @@ export const Singleton = () => {
 
 ### What is the Observer?
 
-Observer 패턴이란 관찰하고 있는 대상의 변경 사항을 관찰자들(Observers, 구독하고 이를 바라보고 있는 대상들)에게 알리는 subscription mechanism을 정의하는데 도움을 주는 behavioral pattern이다.
+`Observer` 패턴이란 관찰하고 있는 대상의 변경 사항을 관찰자들(Observers, 구독하고 이를 바라보고 있는 대상들)에게 알리는 subscription mechanism을 정의하는데 도움을 주는 behavioral pattern이다.
 
 ### When should you use Observer?
 
@@ -183,7 +183,7 @@ Observer 패턴을 구현할 때
 
 다음 예제를 함께 살펴보자.
 
-```typescript
+```tsx
 import { useEffect, useState } from 'react';
 
 export const InternetAvailabilityObserver = () => {
@@ -246,40 +246,40 @@ React 애플리케이션에선 애플리케이션의 복잡도가 올라갈 때 
 
 예를 들어, 애플리케이션 사용자(`add`, `remove`, `fetch`, `fetch one`)를 관리하는 컴포넌트가 있다고 해보자. 일반적으로 이러한 경우 많은 상태 변수와 HTTP 요청 로직으로 인해 코드는 어지럽혀지며 가독성이 떨어지게 된다. 아래 코드 예제를 보자.
 
-```typescript
+```tsx
 export const NoFacade: FC = () => {
-	const [users, setUsers] = useState<any>([]);
+  const [users, setUsers] = useState<any>([]);
 
-	const fetchUsers = useCallback(async () => {
-		const resp = await axios.get(`/api/users`);
-		setUsers(resp.data);
-	}, []);
+  const fetchUsers = useCallback(async () => {
+    const resp = await axios.get(`/api/users`);
+    setUsers(resp.data);
+  }, []);
 
-	useEffect(() => {
-		fetchUsers();
-	}, [fetchUsers]);
+  useEffect(() => {
+    fetchUsers();
+  }, [fetchUsers]);
 
-	const handleUserDelete = async (id: string) => {
-		await axios.delete(`/api/users/${id}`);
-		setUsers(users.filter((user: any) => user.id !== id));
-	};
+  const handleUserDelete = async (id: string) => {
+    await axios.delete(`/api/users/${id}`);
+    setUsers(users.filter((user: any) => user.id !== id));
+  };
 
-	const handleCreateUser = async (user: any) => {
-		if (!users.find((u: any) => u.id === user.id) {
-			await axios.post(`/api/users`, user);
-			setUsers([...users, user]);
-		} else {
-			console.log('User already exists');
-		}
-	};
+  const handleCreateUser = async (user: any) => {
+    if (!users.find((u: any) => u.id === user.id)) {
+      await axios.post(`/api/users`, user);
+      setUsers([...users, user]);
+    } else {
+      console.log('User already exists');
+    }
+  };
 
-	return (
-		<>
-			<UserTable users={users} onDelete={handleUserDelete} />
-			<UserCreateModal onCreate={handleCreateUser} />
-		</>
-	)
-}
+  return (
+    <>
+      <UserTable users={users} onDelete={handleUserDelete} />
+      <UserCreateModal onCreate={handleCreateUser} />
+    </>
+  );
+};
 ```
 
 위 코드를 보면 HTTP 요청 로직과 상태 변수의 복잡함으로 인해 읽기가 쉽지가 않다. 하지만 개발자들은 HTTP 요청 로직들과 상태 변수들을 그룹화할 수 있으면 데이터를 다루는 하나의 API만 노출시킬 수 있다. 이러한 때가 바로 `Facade` 패턴을 사용할 수 있는 때이다.
@@ -292,7 +292,7 @@ React에서, 개발자들은 커스텀 훅을 통해 복잡한 코드를 그룹�
 
 변경한 코드는 다음과 같다.
 
-```typescript
+```tsx
 import axios from 'axios';
 import { useState } from 'react';
 
@@ -361,35 +361,35 @@ export const useFacadeUserAPI = () => {
 
 커스텀 훅을 활용하여 업데이트한 컴포넌트 코드는 다음과 같다.
 
-```typescript
+```tsx
 export const Facade: FC = () = {
   const userFacade = userFacadeUserAPI();
   const { createUser, deleteUser, getUsers, users } = userFacade;
 
   const fetchUsers = useCallback(async () => {
-	// replace with facade API method to simplify code
-	await getUsers();
+	  // replace with facade API method to simplify code
+	  await getUsers();
   }, [getUsers]);
 
   useEffect(() => {
-	fetchUsers();
+	  fetchUsers();
   }, [fetchUsers]);
 
   const handleUserDelete = async (id: string) => {
-	// replace with a facade method to hide complex code required in deleting
-	await deleteUser(id);
+	  // replace with a facade method to hide complex code required in deleting
+	  await deleteUser(id);
   };
 
   const handleCreateUser = async (user: any) => {
-	// replace with a facade method to hide complex code required in creating
-	await createUser(user);
+	  // replace with a facade method to hide complex code required in creating
+	  await createUser(user);
   };
 
   return (
     <>
-	  <UserTable users={users} onDelete={handleUserDelete} />
-	  <UserCreateModal onCreate={handleCreateUser} />
-	</>
+      <UserTable users={users} onDelete={handleUserDelete} />
+      <UserCreateModal onCreate={handleCreateUser} />
+    </>
   )
 }
 ```
