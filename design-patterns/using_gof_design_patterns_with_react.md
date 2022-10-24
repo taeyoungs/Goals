@@ -362,27 +362,27 @@ export const useFacadeUserAPI = () => {
 커스텀 훅을 활용하여 업데이트한 컴포넌트 코드는 다음과 같다.
 
 ```tsx
-export const Facade: FC = () = {
+export const Facade: FC = () => {
   const userFacade = userFacadeUserAPI();
   const { createUser, deleteUser, getUsers, users } = userFacade;
 
   const fetchUsers = useCallback(async () => {
-	  // replace with facade API method to simplify code
-	  await getUsers();
+    // replace with facade API method to simplify code
+    await getUsers();
   }, [getUsers]);
 
   useEffect(() => {
-	  fetchUsers();
+    fetchUsers();
   }, [fetchUsers]);
 
   const handleUserDelete = async (id: string) => {
-	  // replace with a facade method to hide complex code required in deleting
-	  await deleteUser(id);
+    // replace with a facade method to hide complex code required in deleting
+    await deleteUser(id);
   };
 
   const handleCreateUser = async (user: any) => {
-	  // replace with a facade method to hide complex code required in creating
-	  await createUser(user);
+    // replace with a facade method to hide complex code required in creating
+    await createUser(user);
   };
 
   return (
@@ -390,8 +390,8 @@ export const Facade: FC = () = {
       <UserTable users={users} onDelete={handleUserDelete} />
       <UserCreateModal onCreate={handleCreateUser} />
     </>
-  )
-}
+  );
+};
 ```
 
 위 코드는 커스텀 훅을 바탕으로 컴포넌트 코드를 업데이트한 것이다. 코드를 통해 알 수 있듯이 커스텀 훅은 더 읽기 쉽고 복잡도가 낮은 코드를 만들며 컴포넌트로부터 복잡한 비즈니스 로직을 모두 숨긴다.
