@@ -3,13 +3,19 @@
 **Series**
 
 - [#1 Practical React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%231_Practical_React_Query.md)
-- #2 React Query Data Transformations
+- #2 React Query Data Transformations (현재)
 
 **목차**
 
-### 원본 글
+- [#2 React Query Data Transformations](#2-react-query-data-transformations)
+  - [Data Transformation](#data-transformation)
+  - [0. On the backend](#0-on-the-backend)
+  - [1. In the queryFn](#1-in-the-queryfn)
+  - [2. In the render function](#2-in-the-render-function)
+  - [3. using the select option](#3-using-the-select-option)
 
-https://tkdodo.eu/blog/react-query-data-transformations
+> 원본 글  
+> https://tkdodo.eu/blog/react-query-data-transformations
 
 아래 문서는 가장 흔하고 중요한 과업 중 하나인 `Data Transformation`에 대해 설명합니다.
 
@@ -42,8 +48,6 @@ https://tkdodo.eu/blog/react-query-data-transformations
 🔴  - 항상 가능한 방법은 아님
 
 ## 1. In the queryFn
-
----
 
 `queryFn은` `useQuery` 훅에 전달하는 함수이다. 이는 `Promise를` 반환하고 해당 함수의 결과는 `queryCache에` 저장된다. 그러나 결과가 저장된다는 말이 곧 백엔드에서 제공하는 구조로 무조건 저장해야 한다는 뜻은 아니다. 우리는 이 데이터들을 캐시에 저장하기 전에 변환할 수 있다.
 
@@ -124,8 +128,6 @@ export const useTodosQuery = () => {
 🔴 `data`에 `undefined`가 할당될 가능성이 발생
 
 ## 3. using the select option
-
----
 
 v3에서 소개된 빌트인 `selector`로 데이터를 변환하는 작업에 주로 사용된다.
 

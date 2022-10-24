@@ -2,12 +2,12 @@
 
 **Series**
 
-- #1 Practical React Query
+- #1 Practical React Query (현재)
+- [#2 React Query Data Transformations](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%232_React_Query_Data_Transformations.md)
 
 **목차**
 
 - [#1 Practical React Query](#1-practical-react-query)
-    - [원본 글](#원본-글)
   - [Client State vs Server State](#client-state-vs-server-state)
   - [React Query](#react-query)
   - [The Defaults explained](#the-defaults-explained)
@@ -21,9 +21,8 @@
   - [Don’t use the queryCache as a local state manager](#dont-use-the-querycache-as-a-local-state-manager)
   - [Create custom hooks](#create-custom-hooks)
 
-### 원본 글
-
-https://tkdodo.eu/blog/practical-react-query
+> 원본 글  
+> https://tkdodo.eu/blog/practical-react-query
 
 2018년엔 **Apollo Client**와 **GraphQL**이 등장했다. 등장한 것과 별개로 등장했을 때 **GraphQL**과 **Apollo Client**에게 던지는 가장 많은 질문 중 하나는 리덕스를 대체할 수 있냐는 질문이었다.
 
