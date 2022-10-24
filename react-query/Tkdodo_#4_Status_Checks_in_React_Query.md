@@ -5,11 +5,18 @@
 - [#1 Practical React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%231_Practical_React_Query.md)
 - [#2 React Query Data Transformations](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%232_React_Query_Data_Transformations.md)
 - #3 React Query Render Optimizations
-- #4 Status Checks in React Query
+- #4 Status Checks in React Query (현재)
 
 **목차**
 
-**React Query**의 장점 중 하나는 Query의 `status` 필드에 쉽게 접근이 가능하다는 점이다. 이를 통해 Query가 로딩 상태인지 에러 상태인지 즉시 알 수 있다. 이를 위해서 **React Query**에서는 내부 상태 머신으로부터 여러 `boolean` 플래그 값을 노출시킨다. [타입들](https://github.com/TanStack/query/blob/f2137dc4e4553256c4ebc1891b548fe35efe9231/src/core/types.ts#L250)을 살펴봤을 때 우리의 **Query**는 다음 중 하나의 상태를 가진다.
+- [#4 Status Checks in React Query](#4-status-checks-in-react-query)
+    - [개요](#개요)
+  - [The standard example](#the-standard-example)
+  - [Background errors](#background-errors)
+
+### 개요
+
+**React Query**의 장점 중 하나는 Query의 `status` 필드에 쉽게 접근이 가능하다는 점이다. 이를 통해 **Query**가 로딩 상태인지 에러 상태인지 즉시 알 수 있다. 이를 위해서 **React Query**에서는 내부 상태 머신으로부터 여러 `boolean` 플래그 값을 노출시킨다. [타입들](https://github.com/TanStack/query/blob/f2137dc4e4553256c4ebc1891b548fe35efe9231/src/core/types.ts#L250)을 살펴봤을 때 우리의 **Query**는 다음 중 하나의 상태를 가진다.
 
 - `success`: **Query**는 성공했으며, 해당 **Query**에 대한 데이터를 보유한 상태
 - `error`: **Query**가 정상적으로 동작하지 않았으며, `error` 값이 설정된 상태
@@ -23,8 +30,6 @@
 > Update: **v4**에서 `isFetching` 플래그는 `fetchStatus`라는 두 번째 상태 객체 하위로 옮겨진다. 마치 새로운 `isPaused` 플래그처럼
 
 ## The standard example
-
----
 
 `idle` 상태는 **Query**를 사용할 수 없는 상태에 해당되는 엣지 케이스이기 때문에 대부분 생략된다. 그래서 대부분의 예제는 다음과 같다.
 
@@ -51,8 +56,6 @@ return <div>{todos.data.map(renderTodo)}</div>;
 **React Query**는 기본적으로 사용자의 `refetch` 요청 없이도 매우 적극적으로 `refetch`를 실행한다. `refetchOnMount`, `refetchOnWindowFocus`, `refetchOnReconnect`의 개념은 데이터를 정확하게 유지하는 데 좋지만 **automatic background refetch**가 실패하는 경우에는 **ux** 측면에서 혼란을 불러일으킬 수도 있다.
 
 ## Background errors
-
----
 
 `background refetch`가 실패할 경우 이는 대개 조용히 무시될 수 있다. 그러나 위 코드는 그렇지 않다. 다음 두 가지 예제를 살펴보자.
 
