@@ -4,6 +4,8 @@
 
 - [#1 Practical React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%231_Practical_React_Query.md)
 - #2 React Query Data Transformations (현재)
+- #3 React Query Render Optimizations
+- #4 Status Checks in React Query
 
 **목차**
 
