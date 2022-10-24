@@ -135,8 +135,8 @@ v3에서 소개된 빌트인 `selector`로 데이터를 변환하는 작업에 �
 
 ```tsx
 export const useTodosQuery = () => {
-	useQuery(['todos'], fetchTodos, {
-		select: (data) => data.map((todo) => todo.name.toUpperCase()),
+  useQuery(['todos'], fetchTodos, {
+    select: (data) => data.map((todo) => todo.name.toUpperCase()),
 })
 ```
 
@@ -179,8 +179,8 @@ export const useTodo = (id) => useTodosQuery((data) => data.find((todo) => todo.
 
 🟢 `data` 객체 내부 속성 중 일부만 구독 가능
 
-🟡 observer 마다 다른 구조를 가질 수도 있음
+🟡 `observer` 마다 다른 구조를 가질 수도 있음
 
-selector를 전달하여 데이터 객체 중 일부만을 구독하도록 만들었으니 observer 마다 다른 데이터 구조를 구독하고 있을 확률이 높다.
+`selector`를 전달하여 데이터 객체 중 일부만을 구독하도록 만들었으니 `observer` 마다 다른 데이터 구조를 구독하고 있을 확률이 높다.
 
 🟡 구조적인 공유를 두 번 수행하고 있다. (이에 대한 더 자세한 사항은 Part 3에서 진행)

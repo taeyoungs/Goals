@@ -48,7 +48,7 @@ function TodosCount() {
 
 매번 **background refetch**를 발생시킬 때, 위 컴포넌트는 다음의 ₩ 정보를 가지고 두 번 리렌더링될 것이다.
 
-```tsx
+```json
 { status: 'success', data: 2, isFetching: true }
 { status: 'success', data: 2, isFetching: false }
 ```
@@ -132,12 +132,12 @@ const queryInfo = useQuery(...)
 
 // 🚨 will not corectly track data
 React.useEffect(() => {
-	console.log(queryInfo.data)
+  console.log(queryInfo.data)
 })
 
 // ✅ fine because the dependency array is accessed during render
 React.useEffect(() => {
-	console.log(queryInfo.data)
+  console.log(queryInfo.data)
 }, [queryInfo.data])
 ```
 
@@ -147,9 +147,9 @@ React.useEffect(() => {
 const queryInfo = useQuery(...)
 
 if (someCondition()) {
-	// 🟡 we will track the data field if someCondition was true
+  // 🟡 we will track the data field if someCondition was true
   // in any previous render cycle
-	return <div>{queryInfo.data}</div>
+  return <div>{queryInfo.data}</div>
 }
 ```
 
@@ -157,7 +157,7 @@ if (someCondition()) {
 
 **React Query**에 기본적으로 활성화되어 있는 것 중 다르지만 조금은 덜 중요한 렌더링 최적화는 `structural sharing`이다. 이 기능을 사용하면 모든 수준에서 데이터에 대한 참조값을 유지할 수 있다. 예를 들어, 다음과 같은 데이터 구조를 가지고 있다고 가정해보자.
 
-```tsx
+```json
 [
   { id: 1, name: 'Learn React', status: 'active' },
   { id: 2, name: 'Learn React Query', status: 'todo' },
@@ -168,7 +168,7 @@ if (someCondition()) {
 
 우리는 백엔드로부터 완전히 새로운 json 데이터를 가져오게 될 것이다.
 
-```tsx
+```json
 [
   -{ id: 1, name: 'Learn React', status: 'active' },
   +{ id: 1, name: 'Learn React', status: 'done' },

@@ -64,11 +64,11 @@ return <div>{todos.data.map(renderTodo)}</div>;
 
 위 두 상황 모두, Query는 다음과 같은 상태를 갖게 될 것이다.
 
-```tsx
+```json
 {
-	"status": "error",
-	"error": { "message": "Something went wrong" },
-	"data": [{ ... }]
+  "status": "error",
+  "error": { "message": "Something went wrong" },
+  "data": [{ ... }]
 }
 ```
 
@@ -88,11 +88,11 @@ return <div>{todos.data.map(renderTodo)}</div>;
 const todos = useTodos();
 
 if (todos.data) {
-	return <div>{todos.data.map(renderTodo)}</div>
+  return <div>{todos.data.map(renderTodo)}</div>
 }
 
 if (todos.error) {
-	return 'An error has occurred: ' todos.error.message;
+  return 'An error has occurred: ' todos.error.message;
 }
 
 return 'Loading...'
