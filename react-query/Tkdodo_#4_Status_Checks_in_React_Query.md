@@ -6,6 +6,7 @@
 - [#2 React Query Data Transformations](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%232_React_Query_Data_Transformations.md)
 - [#3 React Query Render Optimizations](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%233_React_Query_Render_Optimizations.md)
 - #4 Status Checks in React Query (현재)
+- [#6 React Query and TypeScript](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%236_React_Query_and_TypeScript.md)
 
 **목차**
 
@@ -13,6 +14,9 @@
     - [개요](#개요)
   - [The standard example](#the-standard-example)
   - [Background errors](#background-errors)
+
+> 원본 글  
+> https://tkdodo.eu/blog/status-checks-in-react-query
 
 ### 개요
 

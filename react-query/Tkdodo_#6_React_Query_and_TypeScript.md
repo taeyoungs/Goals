@@ -25,6 +25,9 @@
   - [useInfiniteQuery](#useinfinitequery)
   - [Typing the default query function](#typing-the-default-query-function)
 
+> 원본 글  
+> https://tkdodo.eu/blog/react-query-and-type-script
+
 ### 개요
 
 타입스크립트는 이제 프론트엔드 커뮤니티에서 기본처럼 되어가고 있다. 많은 개발자들이 라이브러리가 타입스크립트로 작성되기를 바라며 자바스크립트로 작성되어 있다고 해도 최소한 잘 정리된 타입 정의를 제공해주길 바라고 있다. 필자에겐 만약 라이브러리가 타입스크립트로 작성되었다면, 타입 정의가 최고의 문서가 된다. 구현을 직접 반영하기 때문에 이러한 타입 정의는 결코 틀리지 않는다. 필자는 자주 API 문서를 읽기 전에 타입 정의부터 살펴보곤 한다.
