@@ -1,5 +1,8 @@
 # #6 React Query and TypeScript
 
+> 원본 글  
+> https://tkdodo.eu/blog/react-query-and-type-script
+
 **Series**
 
 - [#1 Practical React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%231_Practical_React_Query.md)
@@ -24,9 +27,6 @@
   - [Optimistic Updates](#optimistic-updates)
   - [useInfiniteQuery](#useinfinitequery)
   - [Typing the default query function](#typing-the-default-query-function)
-
-> 원본 글  
-> https://tkdodo.eu/blog/react-query-and-type-script
 
 ### 개요
 

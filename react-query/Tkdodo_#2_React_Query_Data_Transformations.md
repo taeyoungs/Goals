@@ -1,5 +1,8 @@
 # #2 React Query Data Transformations
 
+> 원본 글  
+> https://tkdodo.eu/blog/react-query-data-transformations
+
 **Series**
 
 - [#1 Practical React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%231_Practical_React_Query.md)
@@ -16,9 +19,6 @@
   - [1. In the queryFn](#1-in-the-queryfn)
   - [2. In the render function](#2-in-the-render-function)
   - [3. using the select option](#3-using-the-select-option)
-
-> 원본 글  
-> https://tkdodo.eu/blog/react-query-data-transformations
 
 아래 문서는 가장 흔하고 중요한 과업 중 하나인 `Data Transformation`에 대해 설명합니다.
 

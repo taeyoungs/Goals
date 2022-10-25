@@ -1,11 +1,15 @@
 # #3 React Query Render Optimizations
 
+> 원본 글  
+> https://tkdodo.eu/blog/react-query-render-optimizations
+
 **Series**
 
 - [#1 Practical React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%231_Practical_React_Query.md)
 - [#2 React Query Data Transformations](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%232_React_Query_Data_Transformations.md)
 - #3 React Query Render Optimizations (현재)
 - [#4 Status Checks in React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%234_Status_Checks_in_React_Query.md)
+- [#6 React Query and TypeScript](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%236_React_Query_and_TypeScript.md)
 
 **목차**
 
@@ -16,9 +20,6 @@
   - [Staying in sync](#staying-in-sync)
   - [Tracked Queries](#tracked-queries)
   - [Structural sharing](#structural-sharing)
-
-> 원본 글  
-> https://tkdodo.eu/blog/react-query-render-optimizations
 
 ### 개요
 

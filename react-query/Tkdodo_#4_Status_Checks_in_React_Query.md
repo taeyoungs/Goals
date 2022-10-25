@@ -1,5 +1,8 @@
 # #4 Status Checks in React Query
 
+> 원본 글  
+> https://tkdodo.eu/blog/status-checks-in-react-query
+
 **Series**
 
 - [#1 Practical React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%231_Practical_React_Query.md)
@@ -14,9 +17,6 @@
     - [개요](#개요)
   - [The standard example](#the-standard-example)
   - [Background errors](#background-errors)
-
-> 원본 글  
-> https://tkdodo.eu/blog/status-checks-in-react-query
 
 ### 개요
 
