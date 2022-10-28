@@ -12,6 +12,7 @@
 - [#6 React Query and TypeScript](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%236_React_Query_and_TypeScript.md)
 - [#7 Using WebSockets with React Query](<(https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%237_Using_WebSockets_with_React_Query.md)>)
 - #8 Effective React Query Keys (현재)
+- #8a Leveraging the Query Function Context
 
 **목차**
 
