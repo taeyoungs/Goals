@@ -91,7 +91,7 @@
 
 <img src="images/7.png" alt="Figure 7: Different browser architectures in process/thread diagram" width="600" />
 
-> Figure 7: Different browser architectures in process/thread diagram
+> Figure 7: Different browser architectures in process/thread diagram  
 > 출처: https://developer.chrome.com/blog/inside-browser-part1/
 
 The important thing to note here is that these different architectures are implementation details. 웹 브라우저를 구축하는 방법에 대한 표준 사양은 없다. 브라우저들의 아키텍처 구축 방법에 대한 접근 방법은 서로 완전히 다를 수도 있다.
@@ -104,7 +104,7 @@ The important thing to note here is that these different architectures are imple
 
 <img src="images/8.png" alt="Figure 8: Diagram of Chrome’s multi-process architecture. Multiple layers are shown under Renderer Process to represent Chrome running multiple Renderer Processes for each tab." width="600" />
 
-> Figure 8: Diagram of Chrome’s multi-process architecture. Multiple layers are shown under Renderer Process to represent Chrome running multiple Renderer Processes for each tab.
+> Figure 8: Diagram of Chrome’s multi-process architecture. Multiple layers are shown under Renderer Process to represent Chrome running multiple Renderer Processes for each tab.  
 > 출처: https://developer.chrome.com/blog/inside-browser-part1/
 
 ## Which process controls what?
@@ -121,7 +121,7 @@ The important thing to note here is that these different architectures are imple
 
 <img src="images/9.png" alt="Figure 9: Different processes pointing to different parts of browser UI" width="600" />
 
-> Figure 9: Different processes pointing to different parts of browser UI
+> Figure 9: Different processes pointing to different parts of browser UI  
 > 출처: https://developer.chrome.com/blog/inside-browser-part1/
 
 **Extension Process** 및 **Utility Process**와 같은 훨씬 더 많은 프로세스가 있다. 만약 **Chrome** 내에서 얼마나 많은 `Process`가 동작하고 있는지 궁금하다면 우측 상단에 있는 `Menu` 아이콘을 클릭하고 **도구 더보기**를 선택한 뒤에 **Task Manager(작업 관리자)**를 골라보자. 이는 현재 동작하고 있는 `Process` 목록과 해당 `Process`들의 **CPU** 및 **Memory** 사용량을 보여줄 것이다.
@@ -136,7 +136,7 @@ The important thing to note here is that these different architectures are imple
 
 <img src="images/11.png" alt="Figure 10: Diagram showing multiple processes running each tab" width="600" />
 
-> Figure 10: Diagram showing multiple processes running each tab
+> Figure 10: Diagram showing multiple processes running each tab  
 > 출처: https://developer.chrome.com/blog/inside-browser-part1/
 
 브라우저의 작업이 분리됨으로써 얻는 다른 이점은 **보안**과 **Sandboxing**이다.
@@ -165,7 +165,7 @@ The important thing to note here is that these different architectures are imple
 
 <img src="images/12.svg" alt="Figure 11: Diagram of Chrome’s servicification moving different services into multiple processes and a single browser process" width="600" />
 
-> Figure 11: Diagram of Chrome’s servicification moving different services into multiple processes and a single browser process
+> Figure 11: Diagram of Chrome’s servicification moving different services into multiple processes and a single browser process  
 > 출처: https://developer.chrome.com/blog/inside-browser-part1/
 
 ## Per-frame renderer processes - Site Isolation
@@ -188,7 +188,7 @@ The important thing to note here is that these different architectures are imple
 
 <img src="images/13.png" alt="Figure 12: Diagram of site isolation; multiple renderer processes pointing to iframes within a site" width="600" />
 
-> Figure 12: Diagram of site isolation; multiple renderer processes pointing to iframes within a site
+> Figure 12: Diagram of site isolation; multiple renderer processes pointing to iframes within a site  
 > 출처: https://developer.chrome.com/blog/inside-browser-part1/
 
 **Site Isolation**을 활성화하기 위해 다년간의 노력이 필요했다. **Site Isolation**은 다른 **Renderer Process**를 할당하는 것만큼 간단하지 않다. 왜냐하면 `iframe`이 서로 통신하는 방식을 근본적으로 바꿔야했기 때문이다. 서로 다른 `Process`에서 실행되는 `iframe`이 있는 페이지에서 개발자 도구를 열면 개발자 도구가 매끄럽게 보이도록 **behind-the-scenes** 작업을 구현해야 했다. 페이지에서 단어를 찾기 위해 Ctrl+F를 실행하는 것조차도 여러 **Renderer Process** 간에 검색하는 것을 의미한다. You can see the reason why browser engineers talk about the release of Site Isolation as a major milestone!
