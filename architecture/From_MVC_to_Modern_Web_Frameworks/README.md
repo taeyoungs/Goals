@@ -36,7 +36,7 @@ In the decades that followed, MVC outlived Smalltalk and powered applications fo
 
 <img src="images/2.png" alt="Web MVC 예시" width="600" />
 
-> Controllers respond to HTTP requests
+> Controllers respond to HTTP requests  
 > 출처: https://medium.com/hackernoon/from-mvc-to-modern-web-frameworks-8067ec9dee65
 
 `Controller`는 이제 `View` 대신 애플리케이션의 새로운 진입점이 되었다. 그에 따라 `View`가 가진 책임도 변경됐다. 사용자가 직접 무언가를 보여주고 처리하는 대신 브라우저가 렌더링 하는데 필요한 **HTML**, **JS** 그리고 **CSS**의 번들을 조합하는 것으로 말이다. **HTML**/**JS**는 `XMLHttpRequest`를 통하여 컨트롤러에게 `action`을 다시 전달하는 버튼 클릭 핸들러와 같은 로직을 포함하고 있다. 참고로 브라우저에는 **MVC** 패턴의 존재가 명확하게 있지 않다. 이는 현대 웹 프레임워크의 등장으로 출현으로 곧 바뀐다.
@@ -45,7 +45,7 @@ In the decades that followed, MVC outlived Smalltalk and powered applications fo
 
 브라우저 전쟁이 해결되면서 마침내 여러 가지 좋은 것들(`XMLHttpRequest`, **stable DOM API**, **ES6** 등)을 갖게 되었다. 이렇게 향상된 성능과 유연성을 이용하여 기업들은 단순한 웹페이지가 아닌 **Single Page Apps**, 즉 **SPA**라고 불리는 더욱 더 복잡한 웹앱을 만들기 시작했다. 모던 웹 프레임워크는 높아져가는 클라이언트 사이드 복잡성을 정리하고 애플리케이션 개발이 예측 가능하고 생산적일 수 있도록 유지하는데 도움이 된다.
 
-이러한 프레임워크들은 간단한 **View Controller**(주로 핸들러이거나 `index.html`에 해당된다)를 통해 직접 호스팅하기 위한 **HTML**, **JS** 그리고 **CSS**의 정적 번들 파일을 생성하기 위한 추가적인 빌드 단계를 선보였다. 이러한 정적 리소스는 우리가 **HTTP** 헤더에 `cache-control`을 설정하여 **CDN**을 통해 더 빠르게 리소스를 전달할 수 있게 만들 수 있었다. **Single Page App**들은 **"API Controller"**에 의해 전달되는 리소스(주로 **JSON** 형태로 요청에 대해 응답한다)에 대해 **HTTP** **API** 요청을 만들어 낼 수 있는 로직을 포함한다.
+이러한 프레임워크들은 간단한 **View Controller**(주로 핸들러이거나 `index.html`에 해당된다)를 통해 직접 호스팅하기 위한 **HTML**, **JS** 그리고 **CSS**의 정적 번들 파일을 생성하기 위한 추가적인 빌드 단계를 선보였다. 이러한 정적 리소스는 우리가 **HTTP** 헤더에 `cache-control`을 설정하여 **CDN**을 통해 더 빠르게 리소스를 전달할 수 있게 만들 수 있었다. **Single Page App**들은 "API Controller"에 의해 전달되는 리소스(주로 **JSON** 형태로 요청에 대해 응답한다)에 대해 **HTTP** **API** 요청을 만들어 낼 수 있는 로직을 포함한다.
 
 <img src="images/3.png" alt="Modern Web Frameworks 예시" width="600" />
 

@@ -11,7 +11,7 @@
 | Next.js                                                                        |
 | Remix                                                                          |
 | Global State Manangement                                                       |
-| Architecture                                                                   |
+| [Architecture](https://github.com/taeyoungs/Goals/tree/main/architecture)      |
 | 컨퍼런스                                                                       |
 | 도서 목록                                                                      |
 | Others                                                                         |
