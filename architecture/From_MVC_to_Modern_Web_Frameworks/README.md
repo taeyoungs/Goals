@@ -64,7 +64,7 @@ In the decades that followed, MVC outlived Smalltalk and powered applications fo
 > Actual Flux diagram; all the arrows on the right-side point clockwise.  
 > 출처: https://medium.com/hackernoon/from-mvc-to-modern-web-frameworks-8067ec9dee65
 
-**Flux**는 단방향 데이터 흐름에 관한 것이다. **MVC**에서 **Model**은 **View**에 의해 렌더링될 지속적인 데이터를 나타낸다. **Flux**는 **MVC** 모델의 책임을 분리했다. 비즈니스 로직에 대해서는 **Action**/**API**를 사용하고 상태값을 다루기 위해 **"Store"**를 사용한다. You can think of the Store as one monolithic [Passive Model](<https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff649643(v=pandp.10)>) for the entire app.
+**Flux**는 단방향 데이터 흐름에 관한 것이다. **MVC**에서 **Model**은 **View**에 의해 렌더링될 지속적인 데이터를 나타낸다. **Flux**는 **MVC** 모델의 책임을 분리했다. 비즈니스 로직에 대해서는 **Action**/**API**를 사용하고 상태값을 다루기 위해 "Store"를 사용한다. You can think of the Store as one monolithic [Passive Model](<https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff649643(v=pandp.10)>) for the entire app.
 
 **Flux**가 단방향 데이터 흐름을 선택한 이유는 무엇일까? 애플리케이션이 복잡해짐에 따라 **View** 업데이트로 인한 상태 변경을 관리하는 것이 점점 어려워졌다. 특히나 다른 소스에서 오는 경우에는 더욱 그랬다. **View**가 속성 변경에 대한 **ViewModel**의 `mutable` 인스턴스를 바라보고 있는 데이터 바인딩과는 반대로 **React**는 불변 `state`/`props`의 함수로 새로운 **View**를 만들어 냈다. **View**는 로컬 상태 변경에 대해 신경 쓰지 않아도 된다. 애플리케이션은 상태 트리에 새로운 **Model** 인스턴스를 생성해야만 **View**를 변경할 수 있다. **React**가 애플리케이션을 업데이트하고 싶을 때 상태 트리의 일부를 새로운 객체로 대체하여 새로운 **View**를 생성하게끔 만든다.
 

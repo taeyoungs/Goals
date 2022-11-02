@@ -14,12 +14,12 @@
 - [#8 Effective React Query Keys](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%238_Effective_React_Query_Keys.md)
 - [#8a Leveraging the Query Function Context](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%238a_Leveraging_the_Query_Function_Context.md)
 - #9 Placeholder and Initial Data in React Query (현재)
-- #10 React Query as a State Manager
+- [#10 React Query as a State Manager](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2310_React_Query_as_a_State_Manager.md)
 
 **목차**
 
 - [#9 Placeholder and Initial Data in React Query](#9-placeholder-and-initial-data-in-react-query)
-  - [개요](#개요)
+    - [개요](#개요)
 - [Similarities](#similarities)
   - [On cache level](#on-cache-level)
   - [On observer level](#on-observer-level)
