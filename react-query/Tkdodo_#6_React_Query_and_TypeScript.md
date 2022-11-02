@@ -13,11 +13,13 @@
 - [#7 Using WebSockets with React Query](<(https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%237_Using_WebSockets_with_React_Query.md)>)
 - [#8 Effective React Query Keys](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%238_Effective_React_Query_Keys.md)
 - [#8a Leveraging the Query Function Context](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%238a_Leveraging_the_Query_Function_Context.md)
+- [#9 Placeholder and Initial Data in React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%239_Placeholder_and_Initial_Data_in_React_Query.md.md)
+- #10 React Query as a State Manager
 
 **목차**
 
 - [#6 React Query and TypeScript](#6-react-query-and-typescript)
-    - [개요](#개요)
+  - [개요](#개요)
   - [Generics](#generics)
   - [The four Generics](#the-four-generics)
   - [Type Inference (타입 추론)](#type-inference-타입-추론)

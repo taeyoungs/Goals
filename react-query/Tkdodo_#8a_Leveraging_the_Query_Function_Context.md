@@ -13,11 +13,13 @@
 - [#7 Using WebSockets with React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%237_Using_WebSockets_with_React_Query.md)
 - [#8 Effective React Query Keys](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%238_Effective_React_Query_Keys.md)
 - #8a Leveraging the Query Function Context (현재)
+- [#9 Placeholder and Initial Data in React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%239_Placeholder_and_Initial_Data_in_React_Query.md.md)
+- #10 React Query as a State Manager
 
 **목차**
 
 - [#8a Leveraging the Query Function Context](#8a-leveraging-the-query-function-context)
-    - [개요](#개요)
+  - [개요](#개요)
   - [Hot take](#hot-take)
   - [QueryFunctionContext](#queryfunctioncontext)
   - [How to type the QueryFunctionContext](#how-to-type-the-queryfunctioncontext)
