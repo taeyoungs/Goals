@@ -13,5 +13,5 @@
 | Global State Manangement                                                       |
 | [Architecture](https://github.com/taeyoungs/Goals/tree/main/architecture)      |
 | 컨퍼런스                                                                       |
-| 도서 목록                                                                      |
+| [Books](https://github.com/taeyoungs/Goals/tree/main/books)                    |
 | Others                                                                         |
