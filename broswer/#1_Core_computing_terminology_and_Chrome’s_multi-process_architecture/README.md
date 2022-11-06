@@ -7,7 +7,7 @@
 
 - #1 Core computing terminology and Chrome’s multi-process architecture (현재)
 - [#2 Where a user requests a site and the browser prepares to render a page](https://github.com/taeyoungs/Goals/tree/main/broswer/%232_What_happens_in_navigation)
-- #3 Inner workings of a Renderer Process
+- [#3 Inner workings of a Renderer Process](https://github.com/taeyoungs/Goals/tree/main/broswer/%233_Inner_workings_of_a_Renderer_Process)
 - #4 Input is coming to the Compositor
 
 **목차**
