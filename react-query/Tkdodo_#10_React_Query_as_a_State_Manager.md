@@ -15,11 +15,13 @@
 - [#8a Leveraging the Query Function Context](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%238a_Leveraging_the_Query_Function_Context.md)
 - [#9 Placeholder and Initial Data in React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%239_Placeholder_and_Initial_Data_in_React_Query.md.md)
 - #10 React Query as a State Manager (현재)
+- [#11 React Query Error Handling](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2311_React_Query_Error_Handling.md)
+- #12 Mastering Mutations in React Query
 
 **목차**
 
 - [#10 React Query as a State Manager](#10-react-query-as-a-state-manager)
-  - [개요](#개요)
+    - [개요](#개요)
   - [An Async State Manager](#an-async-state-manager)
   - [A data synchronization tool](#a-data-synchronization-tool)
     - [Before React Query](#before-react-query)

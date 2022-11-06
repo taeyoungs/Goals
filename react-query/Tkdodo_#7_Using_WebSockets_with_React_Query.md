@@ -14,12 +14,14 @@
 - [#8 Effective React Query Keys](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%238_Effective_React_Query_Keys.md)
 - [#8a Leveraging the Query Function Context](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%238a_Leveraging_the_Query_Function_Context.md)
 - [#9 Placeholder and Initial Data in React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%239_Placeholder_and_Initial_Data_in_React_Query.md.md)
-- #10 React Query as a State Manager
+- [#10 React Query as a State Manager](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2310_React_Query_as_a_State_Manager.md)
+- [#11 React Query Error Handling](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2311_React_Query_Error_Handling.md)
+- #12 Mastering Mutations in React Query
 
 **목차**
 
 - [#7 Using WebSockets with React Query](#7-using-websockets-with-react-query)
-  - [개요](#개요)
+    - [개요](#개요)
   - [What are WebSockets](#what-are-websockets)
   - [React Query integration](#react-query-integration)
   - [Step by Step](#step-by-step)
