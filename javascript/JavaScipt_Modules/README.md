@@ -3,6 +3,32 @@
 > 원본 글  
 > https://v8.dev/features/modules
 
+**목차**
+
+- [JavaScript Modules](#javascript-modules)
+  - [What are JS modules?](#what-are-js-modules)
+  - [Using JS modules in the browser](#using-js-modules-in-the-browser)
+    - [Browser-specific differences between modules and classic scripts](#browser-specific-differences-between-modules-and-classic-scripts)
+    - [A note on file extensions](#a-note-on-file-extensions)
+    - [Module specifiers](#module-specifiers)
+    - [Modules are deferred by default](#modules-are-deferred-by-default)
+  - [Other module featuers](#other-module-featuers)
+    - [Dynamic `import()`](#dynamic-import)
+    - [`import.meta`](#importmeta)
+  - [Performance recommendations](#performance-recommendations)
+    - [Kepp bundling](#kepp-bundling)
+    - [Trade-offs of bundling vs. shipping unbundled modules](#trade-offs-of-bundling-vs-shipping-unbundled-modules)
+    - [Use fine-grained modules](#use-fine-grained-modules)
+    - [Preload modules](#preload-modules)
+    - [Use HTTP/2](#use-http2)
+  - [Web adoption of JS modules](#web-adoption-of-js-modules)
+  - [What’s next for JS modules](#whats-next-for-js-modules)
+    - [Faster and deterministic module resolution algorithm](#faster-and-deterministic-module-resolution-algorithm)
+    - [Worklets and web workers](#worklets-and-web-workers)
+    - [Import maps](#import-maps)
+    - [Web packaging: native bundles](#web-packaging-native-bundles)
+    - [Layered APIs](#layered-apis)
+
 ## What are JS modules?
 
 JS 모듈(**ES** `modules` 또는 **ECMAScript** `modules`라고도 알려진)은 새로운 주요 기능 또는 기능들의 모음이다. 아마도 과거에 **Node.js**의 **CommonJS** 또는 **AMD** 또는 그 외에 모듈 시스템과 같은 **JavaScript** 모듈 시스템을 사용해본 적이 있을 것이다. 이러한 모듈 시스템들의 공통점은 `import`와 `export`를 할 수 있게 만들어 준다는 것이다.
@@ -67,8 +93,6 @@ const x = 42; // TODO: Rename x to y.
 이러한 차이점들로 인해 모듈과 기존 스크립트에서 동일한 코드를 실행시켰을 경우 다르게 동작할 지도 모른다. 따라서, **JavaScript** 런타임은 스크립트가 모듈이라는 것을 알아야 한다.
 
 ## Using JS modules in the browser
-
----
 
 웹에서는 `type` 속성을 `module`로 설정하여 브라우저가 `<script>` 요소를 모듈로서 대하도록 만들 수 있다.
 
@@ -294,13 +318,9 @@ So by all means, go ahead and use HTTP/2! Just keep in mind that HTTP/2 server p
 
 ## Web adoption of JS modules
 
----
-
 **JS** 모듈은 서서히 웹에서 채택되고 있다. usage counter는 모든 페이지의 0.08% 만이 현재 `<script type="module">`을 사용하고 있음을 알려준다. Note that this number excludes other entry points such as dynamic `import()` or [worklets](https://drafts.css-houdini.org/worklets/).
 
 ## What’s next for JS modules
-
----
 
 **Chrome** 팀은 다양한 방법으로 **JS** 모듈하여 **DX**를 향상시키기 위해 노력하고 있다. Chrome 팀이 작업 중인 사항들 중 몇 가지를 알아보자.
 

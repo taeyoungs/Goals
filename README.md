@@ -2,7 +2,7 @@
 
 | 카테고리                                                                       |
 | ------------------------------------------------------------------------------ |
-| JavaScript                                                                     |
+| [JavaScript](https://github.com/taeyoungs/Goals/tree/main/javascript)          |
 | TypeScript                                                                     |
 | [Browser](https://github.com/taeyoungs/Goals/tree/main/broswer)                |
 | [Design Pattern](https://github.com/taeyoungs/Goals/tree/main/design-patterns) |
