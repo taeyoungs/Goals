@@ -7,7 +7,7 @@
 | [Browser](https://github.com/taeyoungs/Goals/tree/main/broswer)                |
 | [Design Pattern](https://github.com/taeyoungs/Goals/tree/main/design-patterns) |
 | [React Query](https://github.com/taeyoungs/Goals/tree/main/react-query)        |
-| React                                                                          |
+| [React](https://github.com/taeyoungs/Goals/tree/main/react)                    |
 | Next.js                                                                        |
 | Remix                                                                          |
 | Global State Manangement                                                       |
