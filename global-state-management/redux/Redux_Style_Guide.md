@@ -312,7 +312,7 @@ const rootReducer = combineReducers({
 
 ### #8 Treat Reducers as State Machines
 
-많은 **Redux**의 `reducer`들은 `unconditionally`하게 작성되어 있다. 이러한 `reducer`들은 현재 `state`에 대한 어떠한 로직도 기반으로 하지 않고 `dispatch`된 `action`만 보고 새로운 `state` 값을 계산한다. 이는 몇몇의 `action`들의 경우 애플리케이션의 로직에 따라 어떨 때는 개념적으로 **유효하지 않을 수도** 있기에 버그를 만들어낼 수 있다. 예를 들어, **"request successded"** `action`은 `state`가 이미 **"loading"** 되어 있는 경우에만 새로운 값을 계산해야 하며, **"update this item"** `action`은 `item`이 **"being edited"**라고 되어 있는 경우에만 `dispatch` 되어야 한다.
+많은 **Redux**의 `reducer`들은 `unconditionally`하게 작성되어 있다. 이러한 `reducer`들은 현재 `state`에 대한 어떠한 로직도 기반으로 하지 않고 `dispatch`된 `action`만 보고 새로운 `state` 값을 계산한다. 이는 몇몇의 `action`들의 경우 애플리케이션의 로직에 따라 어떨 때는 개념적으로 **유효하지 않을 수도** 있기에 버그를 만들어낼 수 있다. 예를 들어, "**request successded**" `action`은 `state`가 이미 "**loading**" 되어 있는 경우에만 새로운 값을 계산해야 하며, "**update this item**" `action`은 `item`이 "**being edited**"라고 되어 있는 경우에만 `dispatch` 되어야 한다.
 
 이 문제를 해결하려면 `reducer`를 `**state machines**`로만 취급해야 한다. `action`이 `unconditionally`(무조건적으로) 계산되는 것이 아니라 현재 `state`와 `dispatch`된 `action`의 조합을 보고 새로운 `state` 값을 계산할지 말지 여부를 결정한다.
 
@@ -340,7 +340,7 @@ const rootReducer = combineReducers({
 
 **Redux**는 `action.type` 필드의 내용이 무엇인지 신경쓰지 않는다. - 해당 필드는 단지 정의되어 있어야할 뿐이다. `action type`들을 현재 시제(`users/update`), 과거 시제(`users/updated`), 이벤트 묘사(`upload/progress`) 또는 **setter** (`users/setUserName`)와 같이 작성하는 것에 문제는 없다. 애플리케이션에서 주어진 작업이 의미하는 바와 이러한 작업을 모델링하는 방법을 결정하는 것은 사용자의 몫이다.
 
-그러나 **"setter"**보다는 **"describing events that occurred"**로서 `action`을 대하는 것을 추천한다. `action`을 이벤트로서 대하면 일반적으로 더 의미 있는 `action` 이름, `dispatch`된 `action` 수의 총 양 감소, 더 의미있는 `action` 로그 기록들이 생성된다. **"setters"**로서 `action`를 작성하는 것은 종종 너무 많은 개별 `action` 타입, 너무 많은 `dispatch` 그리고 의미없는 action 로그들을 만들어 낸다.
+그러나 "**setter**"보다는 "**describing events that occurred**"로서 `action`을 대하는 것을 추천한다. `action`을 이벤트로서 대하면 일반적으로 더 의미 있는 `action` 이름, `dispatch`된 `action` 수의 총 양 감소, 더 의미있는 `action` 로그 기록들이 생성된다. "**setters**"로서 `action`를 작성하는 것은 종종 너무 많은 개별 `action` 타입, 너무 많은 `dispatch` 그리고 의미없는 action 로그들을 만들어 낸다.
 
 > **Detailed Explanation**
 >
@@ -503,7 +503,7 @@ As mentioned above, we specifically recommend using Immer if you want to simplif
 
 ### #2 Write Actions Using the Flux Standard Action Convention
 
-원래 **Flux Architecture** 문서에 명시되어 있기로는 `action` 객체엔 `type` 필드는 반드시 있어야 한다는 것 외에 작업의 필드에 어떤 종류의 필드 또는 명명 규칙을 사용해야 하는지에 대한 추가 지침은 제공하지 않았다. 일관성을 제공하기 위해 Andrew Clark은 **Redux** 개발 초기에 **"Flux Standard Actions"**라는 규칙을 만들었다. 요약하면, FSA 협약에 따르면 `action`는
+원래 **Flux Architecture** 문서에 명시되어 있기로는 `action` 객체엔 `type` 필드는 반드시 있어야 한다는 것 외에 작업의 필드에 어떤 종류의 필드 또는 명명 규칙을 사용해야 하는지에 대한 추가 지침은 제공하지 않았다. 일관성을 제공하기 위해 Andrew Clark은 **Redux** 개발 초기에 "**Flux Standard Actions**"라는 규칙을 만들었다. 요약하면, FSA 협약에 따르면 `action`는
 
 - 언제나 `payload` 필드 안에 데이터를 전달해야 한다.
 - 추가적인 정보가 있다면 이는 `meta` 필드가 가지고 있는다.
@@ -545,7 +545,7 @@ However, **the use of React hooks does make it somewhat easier to manage logic 
 
 ### #6 Use Selector Functions to Read from Store State
 
-**"Selector functions"**는 **Redux** `store state`로부터 값을 읽는 것을 캡슐화하고 추가 데이터를 파생시키에 아주 강력한 도구이다. 게다가, **Reselect**와 같은 라이브러리는 `input`이 변경되었을 때만 결과를 다시 계산하는 메모이제이션 기능을 가진 `selector` 함수를 생성할 수 있으며, 이는 퍼포먼스 최적화 측면에서 아주 중요하다.
+"**Selector functions**"는 **Redux** `store state`로부터 값을 읽는 것을 캡슐화하고 추가 데이터를 파생시키에 아주 강력한 도구이다. 게다가, **Reselect**와 같은 라이브러리는 `input`이 변경되었을 때만 결과를 다시 계산하는 메모이제이션 기능을 가진 `selector` 함수를 생성할 수 있으며, 이는 퍼포먼스 최적화 측면에서 아주 중요하다.
 
 가능하면 `store state`를 읽기 위해 **memoized selector functions**의 사용을 강력히 추천하며 **Reselect**를 통해 이러한 `selector`를 생성하는 것 또한 추천한다.
 
