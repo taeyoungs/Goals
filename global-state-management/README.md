@@ -2,4 +2,4 @@
 
 ### Redux
 
-- Redux Style Guide
+- [Redux Style Guide](https://github.com/taeyoungs/Goals/blob/main/global-state-management/redux/Redux_Style_Guide.md)
