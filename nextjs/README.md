@@ -1,5 +1,5 @@
 ## 리스트업
 
-### Basic Features
+### [Basic Features](https://github.com/taeyoungs/Goals/tree/main/nextjs/Basic_Features)
 
-- Pages
+- [Pages](https://github.com/taeyoungs/Goals/blob/main/nextjs/Basic_Features/Pages.md)
