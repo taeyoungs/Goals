@@ -14,4 +14,4 @@
 | [Architecture](https://github.com/taeyoungs/Goals/tree/main/architecture)                        |
 | 컨퍼런스                                                                                         |
 | [Books](https://github.com/taeyoungs/Goals/tree/main/books)                                      |
-| Others                                                                                           |
+| [Others](https://github.com/taeyoungs/Goals/tree/main/others)                                    |
