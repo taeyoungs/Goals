@@ -140,7 +140,7 @@ Renderer process는 웹 성능의 많은 측면을 다룬다. `renderer process`
 > Figure 8: Page elements appearing in order of an HTML markup, resulting in wrong rendered image because z-index was not taken into account  
 > 출처: https://developer.chrome.com/blog/inside-browser-part3/
 
-**Paint** 단계에서 **Main thread**는 **Layout tree**를 따라 `Paint record`를 생성한다. `Paint record`는 "background first, then text, then rectangle"와 같은 **Painting process(그림 그리는 순서)**에 대한 정보다. 만약 **JavaScript**를 사용하여 `<canvas>` 요소에 무언갈 그린다면, 이 과정이 친숙할 것이다.
+**Paint** 단계에서 **Main thread**는 **Layout tree**를 따라 `Paint record`를 생성한다. `Paint record`는 "background first, then text, then rectangle"와 같은 **Painting process**(그림 그리는 순서)에 대한 정보다. 만약 **JavaScript**를 사용하여 `<canvas>` 요소에 무언갈 그린다면, 이 과정이 친숙할 것이다.
 
 <img src="images/8.png" alt="Figure 9: The main thread walking through layout tree and producing paint records" width="600">
 
