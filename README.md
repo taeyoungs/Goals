@@ -8,7 +8,7 @@
 | [Design Pattern](https://github.com/taeyoungs/Goals/tree/main/design-patterns)                   |
 | [React Query](https://github.com/taeyoungs/Goals/tree/main/react-query)                          |
 | [React](https://github.com/taeyoungs/Goals/tree/main/react)                                      |
-| React Native                                                                                     |
+| [React Native](https://github.com/taeyoungs/Goals/tree/main/react-native)                        |
 | [Next.js](https://github.com/taeyoungs/Goals/tree/main/nextjs)                                   |
 | Remix                                                                                            |
 | [Global State Manangement](https://github.com/taeyoungs/Goals/tree/main/global-state-management) |
