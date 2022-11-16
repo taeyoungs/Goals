@@ -4,7 +4,7 @@
 
 따라서, **React Hook Form**의 타입 추론이 자연스럽게 이루어지도록 `useForm`을 한번 래핑한 커스텀 훅을 만들어 이를 이용
 
-```jsx
+```tsx
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, UseFormProps, UseFormReturn } from 'react-hook-form';
 import * as Yup from 'yup';
@@ -20,7 +20,7 @@ import * as Yup from 'yup';
  */
 export function useFormWithSchema<T extends Yup.AnyObjectSchema>(
   schema: T,
-  useFormProps?: UseFormProps<Yup.Asserts<T>>,
+  useFormProps?: UseFormProps<Yup.Asserts<T>>
 ): UseFormReturn<Yup.Asserts<T>> {
   return useForm({ ...useFormProps, resolver: yupResolver(schema) });
 }
@@ -38,7 +38,7 @@ export function useFormWithSchema<T extends Yup.AnyObjectSchema>(
  */
 export function useFormWithSchemaBuilder<T extends Yup.AnyObjectSchema>(
   schemaBuilder: (yup: typeof Yup) => T,
-  useFormProps?: UseFormProps<Yup.Asserts<T>>,
+  useFormProps?: UseFormProps<Yup.Asserts<T>>
 ): UseFormReturn<Yup.Asserts<T>> {
   return useForm({ ...useFormProps, resolver: yupResolver(schemaBuilder(Yup)) });
 }
