@@ -5,3 +5,4 @@
 - [Suspense](https://github.com/taeyoungs/Goals/tree/main/react/Suspense)
 - [useEffect 완벽 가이드](https://github.com/taeyoungs/Goals/blob/main/react/useEffect_%EC%99%84%EB%B2%BD_%EA%B0%80%EC%9D%B4%EB%93%9C.md)
 - [Replacing render with createRoot](https://github.com/taeyoungs/Goals/blob/main/react/Replacing_render_with_createRoot.md)
+- [Why React Context is Not a "State Management" Tool (and Why It Doesn't Replace Redux)](https://github.com/taeyoungs/Goals/blob/main/react/Why_React_Context_is_Not_a_%22State_Management%22_Tool.md)
