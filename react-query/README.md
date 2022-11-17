@@ -1,5 +1,7 @@
 ## 리스트 업
 
+### Tkdodo Series
+
 - [Tkdodo #1 Practical React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%231_Practical_React_Query.md)
 - [Tkdodo #2 React Query Data Transformations](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%232_React_Query_Data_Transformations.md)
 - [Tkdodo #3 React Query Render Optimizations](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%233_React_Query_Render_Optimizations.md)
@@ -15,3 +17,7 @@
 - [Tkdodo #13 Offline React Query](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2313_Offline_React_Query.md)
 - [Tkdodo #14 React Query and Forms](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2314_React_Query_and_Forms.md)
 - [Tkdodo #15 React Query FAQs](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2315_React_Query_FAQs.md)
+
+### 나머지
+
+- [React Query의 Query Key 구조화하기](https://youngslog.medium.com/react-query%EC%9D%98-query-key-%EA%B5%AC%EC%A1%B0%ED%99%94%ED%95%98%EA%B8%B0-b8ddc6ec0f8e)
