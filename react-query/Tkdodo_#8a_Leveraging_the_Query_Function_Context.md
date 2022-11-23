@@ -214,7 +214,7 @@ const [, , state, sorting] = queryKey;
 
 > 번역을 잘 못해서 해석이 좀 어색한데 정리를 조금 더 하자면, **Query Key**가 계속해서 추가되는 경우(예를 들어, 계층 구조를 늘린다거나) 배열을 이용한 구조 분해 할당은 아래 이미지와 같이 계속해서 수정이 필요할 수 밖에 없는 구조라는 것이다.
 
-<img src="images/1.png" alt="배열을 이용한 구조 분해 할당 예제" width="500" />
+<img src="images/8a-1.png" alt="배열을 이용한 구조 분해 할당 예제" width="500" />
 
 Source: A PR I recently made
 
