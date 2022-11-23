@@ -66,8 +66,8 @@ const labels = useQuery({ queryKey: ['labels'], queryFn: fetchLabels })
 
 // 2. Use the useQueries hook
 const [issues, labels] = useQueries([
-	queryKey: ['issues'], queryFn: fetchIssues },
-	queryKey: ['labels'], queryFn: fetchLabels },
+  queryKey: ['issues'], queryFn: fetchIssues },
+  queryKey: ['labels'], queryFn: fetchLabels },
 ])
 ```
 

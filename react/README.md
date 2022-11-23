@@ -7,3 +7,4 @@
 - [Replacing render with createRoot](https://github.com/taeyoungs/Goals/blob/main/react/Replacing_render_with_createRoot.md)
 - [Why React Context is Not a "State Management" Tool (and Why It Doesn't Replace Redux)](https://github.com/taeyoungs/Goals/blob/main/react/Why_React_Context_is_Not_a_%22State_Management%22_Tool.md)
 - [New Suspense SSR Architecture in React 18](https://github.com/taeyoungs/Goals/tree/main/react/New_Suspense_SSR_Architecture_in_React_18)
+- [Keeping browser interactive during hydration](https://github.com/taeyoungs/Goals/blob/main/react/Keeping_browser_interactive_during_hydration.md)

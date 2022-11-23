@@ -18,6 +18,7 @@
 - [#14 React Query and Forms](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2314_React_Query_and_Forms.md)
 - [#15 React Query FAQs](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2315_React_Query_FAQs.md)
 - [#16 React Query meets React Router](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2316_React_Query_meets_React_Router.md)
+- [#17 Seeding the Query Cache](https://github.com/taeyoungs/Goals/blob/main/react-query/Tkdodo_%2317_Seeding_the_Query_Cache.md)
 
 ### 나머지
 
