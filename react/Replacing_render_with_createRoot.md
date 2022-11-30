@@ -22,7 +22,7 @@
 
 - **Legacy root API**
 
-  `ReactDOM.render`로 불리는 기존에 존재하던 **Root API**이다. 이 메서드를 사용하면 이제 Root가 “**legacy**” 모드로 동작하며 **React 17**과 동일하게 동작한다. **React 18**이 공식 릴리지가 된 상황이니 이제 **React 18**을 사용하고 있는 상황에서 위 메서드를 사용하게 되면 경고가 발생한다. (해당 메서드는 `deprecated`가 됐으며 새로운 Root API로 교체하라고)
+  `ReactDOM.render`로 불리는 기존에 존재하던 **Root API**이다. 이 메서드를 사용하면 이제 Root가 "**legacy**" 모드로 동작하며 **React 17**과 동일하게 동작한다. **React 18**이 공식 릴리지가 된 상황이니 이제 **React 18**을 사용하고 있는 상황에서 위 메서드를 사용하게 되면 경고가 발생한다. (해당 메서드는 `deprecated`가 됐으며 새로운 Root API로 교체하라고)
 
 - **New root API**
 
@@ -117,7 +117,7 @@ const root = ReactDOMClient.hydarateRoot(container, <App tab="home" />);
 // Unlike with createRoot, you don't need a seperate root.render() call here
 ```
 
-`createRoot`와는 다르게, **`hydrateRoot`**는 초기 JSX 요소를 두 번째 인자값으로 전달해줘야 한다. 두 번째 인자값으로 초기 **JSX** 요소를 전달해줘야 하는 이유는 클라이언트 사이드의 첫 렌더링이 특별하며 클라이언트 측 DOM 트리와 서버 측 DOM 트리를 일치시킬 필요가 있기 때문이다..
+`createRoot`와는 다르게, `hydrateRoot`는 초기 **JSX** 요소를 두 번째 인자값으로 전달해줘야 한다. 두 번째 인자값으로 초기 **JSX** 요소를 전달해줘야 하는 이유는 클라이언트 사이드의 첫 렌더링이 특별하며 클라이언트 측 **DOM** 트리와 서버 측 **DOM** 트리를 일치시킬 필요가 있기 때문이다..
 
 만약 `hydration` 이후에 다시 root를 업데이트하길 원한다면, 변수에 root를 저장한 뒤에 `createRoot`처럼 root 객체의 `render` 메서드와 함께 다음과 같이 호출하면 된다.
 
@@ -192,7 +192,7 @@ root.render(<App callback={() => console.log('rerendered')} />);
 
 > Ref will fire synchronously when the `div` is added to the DOM. Effects fire with a small delay (after the browser paint). So this depends on what exactly you want to do in this callback.
 
-- DOM에 특정 태그가 추가될 때 실행되는 것이 **`Ref callback`**
+- **DOM**에 특정 태그가 추가될 때 실행되는 것이 **`Ref callback`**
 - 브라우저의 `paint` 작업이 완료된 후 실행되는 것이 **`useEffect`**
 
 따라서, 콜백 함수를 통해 무엇을 하고 싶은지에 따라 원하는 로직을 작성하면 될 것 같다.
