@@ -51,7 +51,7 @@ export { createUser };
 
 위 코드는 일부 애플리케이션에서 유저를 생성하는 플로우를 담고 있다. 유저를 생성하기 위해 `createUser` 파일은 `UserRepository와` `MailService를` import하여 플로우를 구축한다. 주석으로 **coupling**이라고 표시한 것처럼 `createUser` 함수는 `UserRepository와` `MailService의` 구체적인 구현에 의존하기 때문에 코드의 유연성이 떨어질 뿐만 아니라 테스트 작성을 어렵게 만든다.
 
-여기서 코드가 서로 의존하는 것은 당연하지만 **제어의 반전(inversion of control)**을 통해 **coupling**을 피할 수 있다. 예를 들어, `createUser`가 `createUser`를 호출한 측에 새로운 유저를 생성할 것으로 예상되는 것을 알려주도록 강제하여 **coupling**을 피할 수 있다.
+여기서 코드가 서로 의존하는 것은 당연하지만 **제어의 반전**(**inversion of control**)을 통해 **coupling**을 피할 수 있다. 예를 들어, `createUser`가 `createUser`를 호출한 측에 새로운 유저를 생성할 것으로 예상되는 것을 알려주도록 강제하여 **coupling**을 피할 수 있다.
 
 의존성 주입은 코드에서 **coupling**을 제거하는 데 도움을 준다. 어떻게 도움을 주는지 한번 살펴보자.
 
