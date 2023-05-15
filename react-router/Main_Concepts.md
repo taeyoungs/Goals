@@ -1,4 +1,4 @@
-# Main Concepts (v6.4.3)
+# Main Concepts (v6.4+)
 
 > 원본 글  
 > https://reactrouter.com/en/main/start/concepts#main-concepts
@@ -7,7 +7,7 @@
 
 **목차**
 
-- [Main Concepts (v6.4.3)](#main-concepts-v643)
+- [Main Concepts (v6.4+)](#main-concepts-v64)
   - [Overview](#overview)
   - [Definitions](#definitions)
   - [History and Locations](#history-and-locations)
