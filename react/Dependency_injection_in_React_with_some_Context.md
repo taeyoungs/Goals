@@ -88,7 +88,7 @@ export { makeCreateUser };
 - 유저 생성에 필요한 모듈을 선언한 `Dependencies` 타입을 만들었다.
 - 의존성과 `userData`를 전달받을 수 있도록 고차 함수로 변경했다.
 
-이제 이러한 변경 사항으로 인해 `createUser`는 인터페이스에만 의존하며 더 이상 유저 도메인 외에는 아무것도 import 해올 필요가 없다. 또한 고차 함수F의 이름을 `makeCreateUser`로 지정한 것을 눈치채셨을 텐데, 이는 해당 고차 함수가 `createUser`를 빌드하는 방법, 즉 의존성과 내부 작동 방식만 알고 있기 때문에 일부러 그렇게 지었다.
+이제 이러한 변경 사항으로 인해 `createUser`는 인터페이스에만 의존하며 더 이상 유저 도메인 외에는 아무것도 import 해올 필요가 없다. 또한 고차 함수의 이름을 `makeCreateUser`로 지정한 것을 눈치챘을 텐데, 이는 해당 고차 함수가 `createUser`를 빌드하는 방법, 즉 의존성과 내부 작동 방식만 알고 있기 때문에 일부러 그렇게 지었다.
 
 그렇다면 의존성을 어디에 주입해야 할까? 이 위치를 **container** 또는 **composition root**라고도 한다.
 
@@ -167,7 +167,7 @@ const HomePage = () => {
 
 앞선 예제에서 살펴본 것처럼 이 서비스(API)의 변경 사항이 HomePage 컴포넌트에 영향을 미치는 방식으로 HomePage와 API라는 두 컴포넌트 사이에 **coupling**이 있다는 것을 눈치챘을 것이다.
 
-게다가 이 컴포넌트에는 많은 책임이 있다. 이상적으로 React의 컴포넌트는 UI만 처리해야 한다. 컴포넌트를 분리하고 더 간결하게 만들 수 있는 두 가지 개념이 있는데, 이는 바로 **Dependency Injection(의존성 주입)**과 **Custom Hooks**다.
+게다가 이 컴포넌트에는 많은 책임이 있다. 이상적으로 React의 컴포넌트는 UI만 처리해야 한다. 컴포넌트를 분리하고 더 간결하게 만들 수 있는 두 가지 개념이 있는데, 이는 바로 **Dependency Injection**(**의존성 주입**)과 **Custom Hooks**다.
 
 ## DI와 Context API를 통한 해결 방법
 
