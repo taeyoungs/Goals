@@ -15,6 +15,4 @@
 | Remix                                                                                            |
 | [Global State Manangement](https://github.com/taeyoungs/Goals/tree/main/global-state-management) |
 | [Architecture](https://github.com/taeyoungs/Goals/tree/main/architecture)                        |
-| 컨퍼런스                                                                                         |
-| [Books](https://github.com/taeyoungs/Goals/tree/main/books)                                      |
 | [Others](https://github.com/taeyoungs/Goals/tree/main/others)                                    |
