@@ -132,13 +132,13 @@ const launch = React.useCallback(() => launchCandy({ type, distance }), [type, d
 // type = 'twix'과 distance = '15m'과 함께 초기 렌더링:
 // - launch는 이번 렌더링에 useCallback에 전달된 콜백과 동일
 
-// type = 'twix' and distance = '15m'과 함께 리렌더링 :
+// type = 'twix' and distance = '15m'과 함께 리렌더링:
 // - launch는 마지막 렌더링에 useCallback에 전달된 콜백과 동일 🤓
 
 // type = 'twix' and distance '20m'과 함께 리렌더링:
 // - launch는 이번 렌더링에 useCallback에 전달된 콜백과 동일
 
-// type = 'twix' and distance = '15m'과 함께 리렌더링 :
+// type = 'twix' and distance = '15m'과 함께 리렌더링:
 // - launch는 이번 렌더링에 useCallback에 전달된 콜백과 동일
 ```
 
@@ -190,9 +190,9 @@ function App() {
 
 > 참고: 각자 생각하기에 위 코드가 form sumit 코드를 작성하는 방식이 아닐 수도 있고, 본인 또한 그렇게 하지 않을 것이다... 사실, 개인적으로는 리액트 쿼리를 사용하겠지만 예제의 목적을 위해 조금만 참아보도록 하자...
 
-무슨 일이 일어날지 추측해 보자. "runaway side-effect loop"를 생각했다면 정답이다! 그 이유는 의존성 배열의 개별 요소가 변경될 때마다 React.useEffect가 주어진 이펙트 콜백 함수에 대한 호출을 트리거하기 때문이다. 위 코드에서 유일한 의존성 요소는 `makeFetchRequest`이고, `makeFetchRequest`는 컴포넌트 내에서 생성되므로 렌더링할 때마다 새로 만들어 진다.
+무슨 일이 일어날지 추측해 보자. "runaway side-effect loop"(의존성 배열에 들어가는 요소로 인해 무한하게 이펙트 함수가 호출되는 경우를 말한다)를 생각했다면 정답이다! 그 이유는 의존성 배열의 개별 요소가 변경될 때마다 React.useEffect가 주어진 이펙트 콜백 함수에 대한 호출을 트리거하기 때문이다. 위 코드에서 유일한 의존성 요소는 `makeFetchRequest`이고, `makeFetchRequest`는 컴포넌트 내에서 생성되므로 렌더링할 때마다 새로 만들어 진다.
 
-그래서 **Memoization**의 **Value stability**가 React에서 중요한 역할을 하는 부분입니다. 그럼 `makeFetchRequest`를 `useCallback`으로 **Memoization** 해보자.
+그래서 **Memoization**의 **Value stability**가 React에서 중요한 역할을 하는 부분이다. 그럼 `makeFetchRequest`를 `useCallback`으로 **Memoization** 해보자.
 
 ```typescript
 const makeFetchRequest = React.useCallback(
