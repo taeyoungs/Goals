@@ -9,3 +9,4 @@
 - [New Suspense SSR Architecture in React 18](https://github.com/taeyoungs/Goals/tree/main/react/New_Suspense_SSR_Architecture_in_React_18)
 - [Keeping browser interactive during hydration](https://github.com/taeyoungs/Goals/blob/main/react/Keeping_browser_interactive_during_hydration.md)
 - [Dependency injection in React with some Context](https://github.com/taeyoungs/Goals/blob/main/react/Dependency_injection_in_React_with_some_Context.md)
+- [Memoization and React](https://github.com/taeyoungs/Goals/blob/main/react/Memoization_and_React.md)
