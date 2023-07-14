@@ -26,17 +26,17 @@ React에서 변경 감지 메커니즘은 종종 `reconciliation` 또는 `render
 
 ## Setting the background
 
-**Fiber**의 아키텍처에는 `reconciliation`/`rende`과 `commit`이라는 두 가지 주요 단계가 있습니다. 소스 코드에서 `reconciliation` 단계는 대부분 "`render` 단계"라고 불립니다. 이 단계는 React가 컴포넌트 트리를 걸어가는 단계입니다:
+**Fiber**의 아키텍처에는 `reconciliation`/`render`과 `commit`이라는 두 가지 주요 단계가 있습니다. 소스 코드에서 `reconciliation` 단계는 대부분 "`render` 단계"라고 불립니다. 이 단계는 React가 컴포넌트 트리를 걸어가는 단계입니다:
 
-- updates state and props,  
+- **updates state and props**,  
   (state와 props를 업데이트 하고)
-- calls lifecycle hooks,  
-  (라이프 사이클 훅을 호출하며)
-- retrieves the children from the component,  
-  (컴포넌트에서 children을 검색한 뒤)
-- compares them to the previous children,  
-  (이전 children과 비교하여)
-- and figures out the DOM updates that need to be performed.  
+- **calls lifecycle hooks**,  
+  (라이프사이클 훅을 호출하며)
+- **retrieves the children from the component**,  
+  (컴포넌트에서 `children을` 검색한 뒤)
+- **compares them to the previous children**,  
+  (이전 `children`과 비교하여)
+- **and figures out the DOM updates that need to be performed**.  
   (이를 사용하여 수행해야 하는 DOM 업데이트를 파악합니다)
 
 이러한 모든 활동을 **Fiber** 내부의 작업이라고 합니다. 수행해야 하는 작업의 유형은 React 엘리먼트의 유형에 따라 다릅니다. 예를 들어, 클래스 컴포넌트의 경우 React는 클래스를 인스턴스화해야 하지만 함수형 컴포넌트의 경우 그렇지 않습니다. 관심이 있으시다면 [여기](https://github.com/facebook/react/blob/340bfd9393e8173adca5380e6587e1ea1a23cefa/packages/shared/ReactWorkTags.js#L29-L28)에서 **Fiber**의 모든 유형의 작업 대상을 볼 수 있습니다. 앤드류가 여기서 이야기하는 활동은 바로 이런 것들입니다:
@@ -93,7 +93,7 @@ requestIdleCallback((deadline) => {
 
 ## Why is the stack relevant to React
 
-이 글의 첫 번째 부분에서 정의한 것처럼 React는 `reconciliation`/`rende` 단계에서 컴포넌트 트리를 걷고 컴포넌트에 대해 몇 가지 작업을 수행합니다. 이전 `reconciliation` 구현에서는 내장 스택에 의존하여 트리를 걷는 동기 재귀 모델을 사용했습니다. `reconciliation`에 대한 [공식 문서](https://legacy.reactjs.org/docs/reconciliation.html?source=post_page---------------------------#recursing-on-children)에서는 이 프로세스를 설명하고 재귀에 대해 많이 이야기합니다:
+이 글의 첫 번째 부분에서 정의한 것처럼 React는 `reconciliation`/`render` 단계에서 컴포넌트 트리를 걷고 컴포넌트에 대해 몇 가지 작업을 수행합니다. 이전 `reconciliation` 구현에서는 내장 스택에 의존하여 트리를 걷는 동기 재귀 모델을 사용했습니다. `reconciliation`에 대한 [공식 문서](https://legacy.reactjs.org/docs/reconciliation.html?source=post_page---------------------------#recursing-on-children)에서는 이 프로세스를 설명하고 재귀에 대해 많이 이야기합니다:
 
 > 기본적으로 DOM 노드의 자식들을 재귀 처리할 때 React는 두 자식 목록을 동시에 반복하고 차이가 있을 때마다 변형(mutation)을 생성합니다.
 
@@ -159,9 +159,9 @@ a1, b1, b2, c1, d1, d2, b3, c2
 
 운 좋게도 Sebastian Markbåge가 설명한 알고리즘의 요점을 [여기](https://github.com/facebook/react/issues/7942?source=post_page---------------------------#issue-182373497)에서 찾을 수 있었습니다. 알고리즘을 구현하려면 3개의 필드가 있는 데이터 구조가 필요합니다:
 
-- child — reference to the first child
-- sibling — reference to the first sibling
-- return — reference to the parent
+- **child** — reference to the first child
+- **sibling** — reference to the first sibling
+- **return** — reference to the parent
 
 React의 새로운 `reconciliation` 알고리즘의 맥락에서 이러한 필드가 있는 데이터 구조를 **Fiber**라고 합니다. 내부적으로는 해야 할 작업의 대기열을 유지하는 React 엘리먼트의 표현입니다. 다음 글에서 더 자세히 설명하겠습니다.
 
@@ -299,7 +299,7 @@ function walk(o) {
 
 ## Work loop in React
 
-다음은 React에서 작업 루프를 구현하는 코드입니다:
+다음은 React에서 **work loop**를 구현하는 코드입니다:
 
 Here’s [the code](https://github.com/facebook/react/blob/95a313ec0b957f71798a69d8e83408f40e76765b/packages/react-reconciler/src/ReactFiberScheduler.js?source=post_page---------------------------#L1118) that implements work loop in React:
 
