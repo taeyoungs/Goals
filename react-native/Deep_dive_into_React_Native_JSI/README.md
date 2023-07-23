@@ -1,5 +1,24 @@
 # Deep dive into React Native JSI
 
+> 원본 글  
+> https://engineering.teknasyon.com/deep-dive-into-react-native-jsi-5fbad4ea8f06
+
+**목차**
+
+- [Deep dive into React Native JSI](#deep-dive-into-react-native-jsi)
+  - [How old React Native Architecture works](#how-old-react-native-architecture-works)
+  - [Emerging of JSI](#emerging-of-jsi)
+  - [Variable definitions in JavaScript and JSI](#variable-definitions-in-javascript-and-jsi)
+    - [Number type definition](#number-type-definition)
+    - [String type definition](#string-type-definition)
+    - [Function definition](#function-definition)
+  - [Bridge and JSI differences](#bridge-and-jsi-differences)
+  - [MMKV library as an example for JSI](#mmkv-library-as-an-example-for-jsi)
+  - [Using JSI in Vision Camera Library](#using-jsi-in-vision-camera-library)
+  - [Custom Host Object creation](#custom-host-object-creation)
+  - [Accessing to a global async function in the JS runtime](#accessing-to-a-global-async-function-in-the-js-runtime)
+  - [Conclusion](#conclusion)
+
 ## How old React Native Architecture works
 
 아시는 분들도 계시겠지만, React Native에서는 JS 측과 Native 측의 통신이 Bridge 파운데이션으로 이루어집니다. JS 측은 이미 잘 격리된 환경을 가지고 있기 때문에 Native 측과 통신할 수 있는 메커니즘이 없습니다. 예를 들어, 네이티브 모듈을 만들지 않고는 자바스크립트 환경에서 디바이스 이름에 접근할 수 없거나 현재 디바이스의 로컬 IP 주소를 가져올 수 없습니다.

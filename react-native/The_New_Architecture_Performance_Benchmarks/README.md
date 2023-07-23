@@ -3,6 +3,19 @@
 > 원본 글  
 > https://github.com/reactwg/react-native-new-architecture/discussions/123?ck_subscriber_id=1780635791
 
+**목차**
+
+- [The New Architecture Performance Benchmarks](#the-new-architecture-performance-benchmarks)
+  - [개요](#개요)
+  - [Fabric](#fabric)
+    - [Motivations and Benefits of the new renderer](#motivations-and-benefits-of-the-new-renderer)
+  - [How we measured time to render for the benchmarks](#how-we-measured-time-to-render-for-the-benchmarks)
+  - [Results](#results)
+    - [Physical Device: Google Pixel 4](#physical-device-google-pixel-4)
+    - [Physical Device: iPhone 12 Pro](#physical-device-iphone-12-pro)
+  - [Write your own performance scenario](#write-your-own-performance-scenario)
+  - [Performance gaps](#performance-gaps)
+
 ## 개요
 
 이러한 비교에 사용된 것과 같은 합성 벤치마크가 항상 실제 시나리오를 대표하는 것은 아니라는 점에 유의해야 합니다. 따라서 새 아키텍처로의 마이그레이션으로 인해 성능이 크게 향상될 것으로 기대하지는 않습니다.
