@@ -10,3 +10,6 @@
 ### 나머지
 
 - [Cross-Origin Read Blocking for Web Developers](https://github.com/taeyoungs/Goals/blob/main/broswer/Cross-Origin_Read_Blocking_for_Web_Developers.md)
+- [The FOUC Problem](https://github.com/taeyoungs/Goals/blob/main/broswer/The_FOUC_Problem.md)
+- [Render Blocking CSS](https://github.com/taeyoungs/Goals/tree/main/broswer/Render_Blocking_CSS)
+- [Render-tree Construction, Layout, and Paint](https://github.com/taeyoungs/Goals/tree/main/broswer/Render-tree_Construction_Layout_and_Paint)
