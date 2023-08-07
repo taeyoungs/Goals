@@ -1,5 +1,8 @@
 # Render-tree Construction, Layout, and Paint
 
+> 원본 글  
+> https://web.dev/critical-rendering-path-render-tree-construction/
+
 **목차**
 
 - [Render-tree Construction, Layout, and Paint](#render-tree-construction-layout-and-paint)

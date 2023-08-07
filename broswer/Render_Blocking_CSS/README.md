@@ -1,5 +1,8 @@
 # Render Blocking CSS
 
+> 원본 글  
+> https://web.dev/critical-rendering-path-render-blocking-css/
+
 **목차**
 
 - [Render Blocking CSS](#render-blocking-css)
